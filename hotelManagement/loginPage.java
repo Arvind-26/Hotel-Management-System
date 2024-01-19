@@ -1,4 +1,4 @@
-package hotelManagment;
+package hotelManagement;
 class loginPage{
   public loginPage(){
   }
