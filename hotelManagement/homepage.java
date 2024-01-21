@@ -21,7 +21,7 @@ public class homepage extends JFrame {
         setLocation(400, 100); 
         setLayout(null);
 
-        ImageIcon img1 = new ImageIcon("C:\\Users\\lenovo\\Desktop\\pracjava\\icon\\pc.png");
+        ImageIcon img1 = new ImageIcon("Hotel-Management-System\\icon\\pc.png");
         Image scaledImage1 = img1.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon11 = new ImageIcon(scaledImage1);
 
@@ -31,7 +31,7 @@ public class homepage extends JFrame {
         btn1.setBounds(30, 130, 150, 175);
         add(btn1);
 
-        ImageIcon img2 = new ImageIcon("C:\\Users\\lenovo\\Desktop\\pracjava\\icon\\list.png");
+        ImageIcon img2 = new ImageIcon("Hotel-Management-System\\icon\\list.png");
         Image scaledImage2 = img2.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon22 = new ImageIcon(scaledImage2);
 
@@ -41,7 +41,7 @@ public class homepage extends JFrame {
         btn2.setBounds(215, 130, 150, 175);
         add(btn2);
 
-        ImageIcon img3 = new ImageIcon("C:\\Users\\lenovo\\Desktop\\pracjava\\icon\\person.png");
+        ImageIcon img3 = new ImageIcon("Hotel-Management-System\\icon\\person.png");
         Image scaledImage3 = img3.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon33 = new ImageIcon(scaledImage3);
 
@@ -50,19 +50,6 @@ public class homepage extends JFrame {
         btn3.setVerticalTextPosition(JButton.BOTTOM);
         btn3.setBounds(400, 130, 150, 175);
         add(btn3);
-        
-        back = new JButton("Back");
-        back.setFont(new Font("Raleway", Font.BOLD, 12));
-        back.setBounds(210, 400, 150, 30);
-        add(back);
-        back.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-                signinpage sin = new signinpage();
-            }
-        });
         
 
         
