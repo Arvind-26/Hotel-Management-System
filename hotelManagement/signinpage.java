@@ -180,7 +180,7 @@ class signinpage extends JFrame {
                     JOptionPane.showMessageDialog(null, "Username : " + nr + "\n Password : " + pass2, "Confermation",
                             JOptionPane.PLAIN_MESSAGE);
                     dispose();
-                    homepage hpage = new homepage();        
+                    homepage h = new homepage();       
 
                 } catch (Exception c) {
                     JOptionPane.showMessageDialog(null, "Please Enter all the Filds Proerly, They all are Imortant.",
