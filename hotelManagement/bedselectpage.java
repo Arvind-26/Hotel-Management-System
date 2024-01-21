@@ -72,13 +72,13 @@ public class bedselectpage extends JFrame implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==bsingle){
-
+                new bookingpage("single");
             }
             else if(e.getSource()==bdouble){
-
+                new bookingpage("double");
             }
             else if(e.getSource()==btriple){
-
+                new bookingpage("triple");
             }
             else if(e.getSource()==bback){
                 dispose();
