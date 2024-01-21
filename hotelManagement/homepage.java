@@ -63,6 +63,7 @@ public class homepage extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==btn1){
+            dispose();
             bedselectpage b1 = new bedselectpage();
         }
         else if(e.getSource()==btn1){
@@ -71,7 +72,7 @@ public class homepage extends JFrame implements ActionListener{
         
         else if(e.getSource()==btn1){
 
-        }
+        }}
     public static void main(String[] args) {
         new homepage();
     }
