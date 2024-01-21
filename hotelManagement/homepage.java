@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 
 import org.w3c.dom.events.Event;
 
-public class homepage extends JFrame {
+public class homepage extends JFrame implements ActionListener{
 
 
     JButton btn1, btn2, btn3, back;
@@ -30,6 +30,7 @@ public class homepage extends JFrame {
         btn1.setVerticalTextPosition(JButton.BOTTOM);
         btn1.setBounds(30, 130, 150, 175);
         add(btn1);
+        btn1.addActionListener(this);
 
         ImageIcon img2 = new ImageIcon("Hotel-Management-System\\icon\\list.png");
         Image scaledImage2 = img2.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
@@ -40,6 +41,7 @@ public class homepage extends JFrame {
         btn2.setVerticalTextPosition(JButton.BOTTOM);
         btn2.setBounds(215, 130, 150, 175);
         add(btn2);
+        btn2.addActionListener(this);
 
         ImageIcon img3 = new ImageIcon("Hotel-Management-System\\icon\\person.png");
         Image scaledImage3 = img3.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
@@ -50,14 +52,28 @@ public class homepage extends JFrame {
         btn3.setVerticalTextPosition(JButton.BOTTOM);
         btn3.setBounds(400, 130, 150, 175);
         add(btn3);
-        
+        btn3.addActionListener(this);        
 
         
         setResizable(false);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource()==btn1){
+            bedselectpage b1 = new bedselectpage();
+        }
+        else if(e.getSource()==btn1){
+            
+        }
+        
+        else if(e.getSource()==btn1){
+
+        }
     public static void main(String[] args) {
         new homepage();
     }
+    
 }
