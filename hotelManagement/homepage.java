@@ -63,7 +63,7 @@ public class homepage extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==btn1){
             dispose();
-            bedselectpage b1 = new bedselectpage();
+            new bedselectpage();
         }
         else if(e.getSource()==btn2){
             

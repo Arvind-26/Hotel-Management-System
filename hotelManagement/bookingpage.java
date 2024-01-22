@@ -1,16 +1,21 @@
 package hotelManagement;
 
 import javax.swing.*;
+import javax.xml.crypto.Data;
 
 import com.toedter.calendar.JDateChooser;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Date;
 
-public class bookingpage extends JFrame{
+public class bookingpage extends JFrame implements ActionListener{
     JLabel head, db, sb, pricee;
     JDateChooser date;
     JComboBox selecttime;
     JButton bback, dane, book;
+    int tot, rs;
 
     bookingpage(String bed){
         super("Booking");
@@ -25,6 +30,7 @@ public class bookingpage extends JFrame{
         add(head);
 
         if(bed.equals("single")){
+            rs = 300;
             JLabel que = new JLabel("1 Bedroom price :");
             que.setFont(new Font("Raleway", Font.BOLD, 20));
             que.setBounds(20, 70, 300, 20);
@@ -35,6 +41,7 @@ public class bookingpage extends JFrame{
             add(price);
         }
         else if(bed.equals("double")){
+            rs = 600;
             JLabel que = new JLabel("2 Bedroom price :");
             que.setFont(new Font("Raleway", Font.BOLD, 20));
             que.setBounds(20, 70, 300, 20);
@@ -53,6 +60,7 @@ public class bookingpage extends JFrame{
             price.setFont(new Font("Raleway", Font.BOLD, 24));
             price.setBounds(20, 80, 200, 56);
             add(price);
+            rs = 1000;
         }
 
         db = new JLabel("Date of booking :");
@@ -69,37 +77,103 @@ public class bookingpage extends JFrame{
         sb.setBounds(20, 220, 200, 23);
         add(sb);
         
-        String []s = {"1day","2days","3days","4days","5days","6days","7days","8days","9days","10days"};
-        selecttime = new JComboBox(s);
-        selecttime.setBounds(210,220,150,25);
+        String []s = {"--No days selected--","1 Day","2 Days","3 Days","4 Days","5 Days","6 Days","7 Days","8 Days","9 Days","10 Days"};
+        selecttime = new JComboBox<>(s);
+        selecttime.setBounds(210,220,160,25);
         add(selecttime);
 
         bback = new JButton("Back");
         bback.setFont(new Font("Raleway", Font.BOLD, 12));
         bback.setBounds(50, 400, 150, 30);
         add(bback);
+        bback.addActionListener(this);
 
         dane = new JButton("Done");
         dane.setFont(new Font("Raleway", Font.BOLD, 12));
         dane.setBounds(400, 280, 150, 30);
         add(dane);
+        dane.addActionListener(this);
 
-        String var = "600";
-
-        pricee = new JLabel("Total Amount:"+var);
+        pricee = new JLabel();
         pricee.setFont(new Font("Raleway", Font.BOLD, 25));
-        pricee.setBounds(50, 350, 300, 23);
-        add(pricee);
+        pricee.setBounds(50, 340, 300, 23);
+        add(pricee);  
+        pricee.setVisible(false);
 
         book = new JButton("Book");
         book.setFont(new Font("Raleway", Font.BOLD, 12));
         book.setBounds(400, 400, 150, 30);
         add(book);
+        book.addActionListener(this);
+        book.setVisible(false);
+
+        
 
         setResizable(false);
         setVisible(true);
     }
-    public static void main(String[] args) {
-        new bookingpage("double");
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        try{
+        
+        
+            int mn = selecttime.getSelectedIndex();
+            if(mn == 1){
+                tot = rs*mn;
+            }else if(mn == 2){
+                tot = rs*mn;
+            }else if(mn == 3){
+                tot = rs*mn;
+            }else if(mn == 4){
+                tot = rs*mn;
+            }else if(mn == 5){
+                tot = rs*mn;
+            }else if(mn == 6){
+                tot = rs*mn;
+            }else if(mn == 7){
+                tot = rs*mn;
+            }else if(mn == 8){
+                tot = rs*mn;
+            }else if(mn == 9){
+                tot = rs*mn;
+            }else if(mn == 10){
+                tot = rs*mn;
+            }
+
+            String selectedDuration = (String)selecttime.getSelectedItem();
+            String date1 = ((JTextField)date.getDateEditor().getUiComponent()).getText();
+            
+            if(e.getSource().equals(dane)){
+
+                if(mn==0){
+                    JOptionPane.showMessageDialog(null, "Please Enter all the Filds Proerly, They all are Imortant.",
+                     "Warning",
+                     JOptionPane.WARNING_MESSAGE);
+
+                }else{
+                    pricee.setText("Total Amount :"+" "+tot);
+                
+                    pricee.setVisible(true);
+                    book.setVisible(true);
+                }      
+            }
+            else if(e.getSource().equals(bback)){
+                dispose();
+                new bedselectpage();
+            }
+            else if(e.getSource().equals(book)){
+                JOptionPane.showMessageDialog(null, "Room Booking for :"+" " + mn +"days"+ "\nAmount Payable " +" "+ tot, "Booking",JOptionPane.PLAIN_MESSAGE);
+                dispose();
+            }
+        }catch(Exception d){
+            System.out.println(d);
+        }
+
     }
+
+    public static void main(String[] args) {
+        new bookingpage("single");
+    }
+    
 }

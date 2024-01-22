@@ -55,7 +55,7 @@ class loginPage extends JFrame implements ActionListener {
     bsignin.setBounds(180, 280, 100, 30);
     add(bsignin);
     bsignin.addActionListener(this);
-
+    setResizable(false);
     setVisible(true);
   }
 

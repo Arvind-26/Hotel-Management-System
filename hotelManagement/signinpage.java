@@ -177,10 +177,9 @@ class signinpage extends JFrame {
                             + "','" + n3 + "'," + a1 + ",'" + ggg + "','" + add1 + "','" + c1 + "','" + m1 + "'," + ph1
                             + ")");
 
-                    JOptionPane.showMessageDialog(null, "Username : " + nr + "\n Password : " + pass2, "Sign in Successfully",
-                            JOptionPane.PLAIN_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Username : " + nr + "\n Password : " + pass2, "Sign in Successfully",JOptionPane.PLAIN_MESSAGE);
                     dispose();
-                    homepage h = new homepage();       
+                    new homepage();       
 
                 } catch (Exception c) {
                     JOptionPane.showMessageDialog(null, "Please Enter all the Filds Proerly, They all are Imortant.",

@@ -66,18 +66,21 @@ public class bedselectpage extends JFrame implements ActionListener{
         bback.setBounds(50, 400, 150, 30);
         add(bback);
         bback.addActionListener(this);
-
+        setResizable(false);;
         setVisible(true);
     }
         @Override
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==bsingle){
+                dispose();
                 new bookingpage("single");
             }
             else if(e.getSource()==bdouble){
+                dispose();
                 new bookingpage("double");
             }
             else if(e.getSource()==btriple){
+                dispose();
                 new bookingpage("triple");
             }
             else if(e.getSource()==bback){
