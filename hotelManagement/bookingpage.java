@@ -1,14 +1,12 @@
 package hotelManagement;
 
 import javax.swing.*;
-import javax.xml.crypto.Data;
 
 import com.toedter.calendar.JDateChooser;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Date;
 
 public class bookingpage extends JFrame implements ActionListener{
     JLabel head, db, sb, pricee;
@@ -16,9 +14,10 @@ public class bookingpage extends JFrame implements ActionListener{
     JComboBox selecttime;
     JButton bback, dane, book;
     int tot, rs;
-
-    bookingpage(String bed){
+    String ne;
+    bookingpage(String bed,String nr){
         super("Booking");
+        ne = nr;
         setSize(600, 500);
         setLocation(400, 100);
         setLayout(null);
@@ -145,13 +144,12 @@ public class bookingpage extends JFrame implements ActionListener{
             String date1 = ((JTextField)date.getDateEditor().getUiComponent()).getText();
             
             if(e.getSource().equals(dane)){
-
-                if(mn==0){
-                    JOptionPane.showMessageDialog(null, "Please Enter all the Filds Proerly, They all are Imortant.",
-                     "Warning",
-                     JOptionPane.WARNING_MESSAGE);
-
-                }else{
+                if(mn==0 || date1.equals("")){
+                        JOptionPane.showMessageDialog(null, "Please Enter all the Filds Proerly, They all are Imortant.",
+                         "Warning",
+                         JOptionPane.WARNING_MESSAGE);
+                    }
+                else {                    
                     pricee.setText("Total Amount :"+" "+tot);
                 
                     pricee.setVisible(true);
@@ -160,7 +158,7 @@ public class bookingpage extends JFrame implements ActionListener{
             }
             else if(e.getSource().equals(bback)){
                 dispose();
-                new bedselectpage();
+                new bedselectpage(ne);
             }
             else if(e.getSource().equals(book)){
                 JOptionPane.showMessageDialog(null, "Room Booking for :"+" " + mn +"days"+ "\nAmount Payable " +" "+ tot, "Booking",JOptionPane.PLAIN_MESSAGE);
@@ -173,7 +171,7 @@ public class bookingpage extends JFrame implements ActionListener{
     }
 
     public static void main(String[] args) {
-        new bookingpage("single");
+        new bookingpage("single","ne");
     }
     
 }

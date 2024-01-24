@@ -1,32 +1,23 @@
 package hotelManagement;
 
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Random;
+
 import javax.swing.ButtonGroup;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-class signinpage extends JFrame {
-
+public class updatepage extends JFrame{
     JTextField fname, mname, lname, age, add, country, mailfild, phone;
-    JPasswordField password;
     JRadioButton male, female, other;
-    JButton signin;
-    Random r;
-    String ggg, nr;
-
-    signinpage() {
-
-        super("Sign in");
+    String ne;
+    updatepage(String nr){
+        super("Update");
+        ne = nr;
         setSize(600, 500);
         setLocation(400, 100);
+        setLayout(null);
 
         JLabel head = new JLabel("Sign In");
         head.setFont(new Font("Raleway", Font.BOLD, 30));
@@ -125,81 +116,9 @@ class signinpage extends JFrame {
         phone.setFont(new Font("Raleway", Font.BOLD, 12));
         phone.setBounds(120, 300, 300, 18);
         add(phone);
-
-        JLabel pass = new JLabel("Password : ");
-        pass.setFont(new Font("Raleway", Font.BOLD, 12));
-        pass.setBounds(20, 340, 100, 56);
-        add(pass);
-        password = new JPasswordField(10);
-        password.setFont(new Font("Raleway", Font.BOLD, 12));
-        password.setBounds(120, 360, 300, 18);
-        add(password);
-
-        r = new Random();
-        int rr = r.nextInt(90) + 10;
-
-        signin = new JButton("Create Account");
-        signin.setFont(new Font("Raleway", Font.BOLD, 12));
-        signin.setBounds(210, 400, 150, 30);
-        add(signin);
-        signin.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                try {
-                    String n1 = fname.getText();
-                    String n2 = mname.getText();
-                    String n3 = lname.getText();
-                    int a1 = Integer.parseInt(age.getText());
-
-                    if (male.isSelected()) {
-                        ggg = "Male";
-
-                    } else if (female.isSelected()) {
-                        ggg = "Female";
-
-                    } else if (other.isSelected()) {
-                        ggg = "Other";
-
-                    }
-
-                    String add1 = add.getText();
-                    String c1 = country.getText();
-                    String m1 = mailfild.getText();
-                    long ph1 = Long.parseLong(phone.getText());
-                    char[] pass1 = password.getPassword();
-                    String pass2 = new String(pass1);
-                    nr = n1 + rr;
-
-                    mysqlconnection data = new mysqlconnection();
-                    data.st.executeUpdate("insert into users values('" + nr + "','" + pass2 + "','" + n1 + "','" + n2
-                            + "','" + n3 + "'," + a1 + ",'" + ggg + "','" + add1 + "','" + c1 + "','" + m1 + "'," + ph1
-                            + ")");
-
-                    JOptionPane.showMessageDialog(null, "Username : " + nr + "\n Password : " + pass2, "Sign in Successfully",JOptionPane.PLAIN_MESSAGE);
-                    dispose();
-                    new homepage(nr);       
-
-                } catch (Exception c) {
-                    JOptionPane.showMessageDialog(null, "Please Enter all the Filds Proerly, They all are Imortant.",
-                     "Warning",
-                     JOptionPane.WARNING_MESSAGE);
-
-                    
-                }
-
-            }
-
-        });
-
-        setLayout(null);
-        setResizable(false);
-        setVisible(true);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
     public static void main(String[] args) {
-        new signinpage();
+        
     }
+    
 }

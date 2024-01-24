@@ -12,8 +12,10 @@ public class bedselectpage extends JFrame implements ActionListener{
     JLabel head;
     JButton bsingle, bdouble, btriple, bback;
     BufferedImage single;
-    public bedselectpage(){
+    String ne;
+    public bedselectpage(String nr){
         super("Bed Rooms");
+        ne = nr;
         setSize(600, 500);
         setLocation(400, 100);
         setLayout(null);
@@ -73,23 +75,23 @@ public class bedselectpage extends JFrame implements ActionListener{
         public void actionPerformed(ActionEvent e) {
             if(e.getSource()==bsingle){
                 dispose();
-                new bookingpage("single");
+                new bookingpage("single",ne);
             }
             else if(e.getSource()==bdouble){
                 dispose();
-                new bookingpage("double");
+                new bookingpage("double",ne);
             }
             else if(e.getSource()==btriple){
                 dispose();
-                new bookingpage("triple");
+                new bookingpage("triple",ne);
             }
             else if(e.getSource()==bback){
                 dispose();
-                new homepage();
+                new homepage(ne);
             }            
     }
     public static void main(String[] args) {
-        new bedselectpage();
+        new bedselectpage("nr");
     }
     
 }

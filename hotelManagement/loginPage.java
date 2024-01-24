@@ -71,7 +71,7 @@ class loginPage extends JFrame implements ActionListener {
         rs.next();
         try{
         if(rs.getString("username").equals(username) && rs.getString("password").equals(password1)){
-          homepage home = new homepage();
+          new homepage(username);
         }}
         catch(Exception o){
           JOptionPane.showMessageDialog(null, "Invalid Username or Password","Error",JOptionPane.ERROR_MESSAGE);

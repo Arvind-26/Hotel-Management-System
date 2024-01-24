@@ -1,6 +1,5 @@
 package hotelManagement;
 
-import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,14 +7,15 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-import org.w3c.dom.events.Event;
 
 public class homepage extends JFrame implements ActionListener {
 
 
     JButton btn1, btn2, btn3, back;
-    homepage(){
+    String ne;
+    homepage(String nr){
         super("Home Page");
+        ne = nr;
         setSize(600, 500);
         setLocation(400, 100); 
         setLayout(null);
@@ -63,16 +63,17 @@ public class homepage extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==btn1){
             dispose();
-            new bedselectpage();
+            new bedselectpage(ne);
         }
         else if(e.getSource()==btn2){
             
         }
         
         else if(e.getSource()==btn3){
-
+            dispose();
+            new profilepage(ne);
         }}
     public static void main(String[] args) {
-        new homepage();
+        new homepage("nr");
     }
 }
