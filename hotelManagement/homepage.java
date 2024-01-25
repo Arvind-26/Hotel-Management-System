@@ -66,7 +66,8 @@ public class homepage extends JFrame implements ActionListener {
             new bedselectpage(ne);
         }
         else if(e.getSource()==btn2){
-            
+            dispose();
+            new bookedpage(ne);            
         }
         
         else if(e.getSource()==btn3){
