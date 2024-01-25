@@ -79,7 +79,7 @@ public class profilepage extends JFrame implements ActionListener{
 
         JLabel mail = new JLabel("Mail Address :  "+w[7]);
         mail.setFont(new Font("Raleway", Font.BOLD, 15));
-        mail.setBounds(20, 220, 300, 56);
+        mail.setBounds(20, 220, 400, 56);
         add(mail);
 
         JLabel phn = new JLabel("Phone Number :  "+w[8]);
@@ -122,7 +122,7 @@ public class profilepage extends JFrame implements ActionListener{
         }
     }
     public static void main(String[] args) {
-        new profilepage("arvind35");
+        new profilepage("Rudra11");
     }
     
     

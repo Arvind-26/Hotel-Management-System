@@ -161,6 +161,19 @@ public class bookingpage extends JFrame implements ActionListener{
                 new bedselectpage(ne);
             }
             else if(e.getSource().equals(book)){
+                mysqlconnection my = new mysqlconnection();
+            
+                try{
+                    my.st.executeUpdate("create table "+ne+" (date varchar(15), day varchar(10), price int)");
+
+                }catch(Exception g){
+                    
+                }
+                finally{
+                    my.st.executeUpdate("insert into "+ne+" values('"+date1+"','"+selectedDuration+"',"+tot+")");
+                }
+
+
                 JOptionPane.showMessageDialog(null, "Room Booking for :"+" " + mn +"days"+ "\nAmount Payable " +" "+ tot, "Booking",JOptionPane.PLAIN_MESSAGE);
                 dispose();
             }

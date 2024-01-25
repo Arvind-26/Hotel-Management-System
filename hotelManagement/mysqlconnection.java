@@ -9,7 +9,7 @@ public class mysqlconnection {
     public mysqlconnection() {
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/HotelManagement", "root",
-                    "root123");
+                    "Rudra@mysql123");
             st = con.createStatement();
         } catch (Exception e) {
             System.out.println(e);
