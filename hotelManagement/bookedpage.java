@@ -28,7 +28,7 @@ public class bookedpage extends JFrame implements ActionListener{
         setLocation(400, 100);
         setLayout(new FlowLayout(FlowLayout.LEFT));
 
-        JLabel head = new JLabel("Make Changes");
+        JLabel head = new JLabel("Booked History");
         head.setFont(new Font("Raleway", Font.BOLD, 30));
         head.setBounds(10, 10, 250, 40);
         add(head);
@@ -77,7 +77,7 @@ public class bookedpage extends JFrame implements ActionListener{
         new homepage(ne);
     }
     public static void main(String[] args) {
-        new bookedpage("arvind35");
+        new bookedpage("Rudra73");
     }
     
 }

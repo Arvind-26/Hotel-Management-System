@@ -7,6 +7,7 @@ import com.toedter.calendar.JDateChooser;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 public class bookingpage extends JFrame implements ActionListener{
     JLabel head, db, sb, pricee;
@@ -15,6 +16,7 @@ public class bookingpage extends JFrame implements ActionListener{
     JButton bback, dane, book;
     int tot, rs;
     String ne;
+    Random id;
     bookingpage(String bed,String nr){
         super("Booking");
         ne = nr;
@@ -150,7 +152,7 @@ public class bookingpage extends JFrame implements ActionListener{
                          JOptionPane.WARNING_MESSAGE);
                     }
                 else {                    
-                    pricee.setText("Total Amount :"+" "+tot);
+                    pricee.setText("Total Amount :"+" ₹"+tot);
                 
                     pricee.setVisible(true);
                     book.setVisible(true);
@@ -161,21 +163,26 @@ public class bookingpage extends JFrame implements ActionListener{
                 new bedselectpage(ne);
             }
             else if(e.getSource().equals(book)){
+
                 mysqlconnection my = new mysqlconnection();
-            
+                id = new Random();
+                int idd = id.nextInt(999, 9999);
+                String iddd = "@#"+idd+"$#";
+
                 try{
-                    my.st.executeUpdate("create table "+ne+" (date varchar(15), day varchar(10), price int)");
+                    my.st.executeUpdate("create table "+ne+" (date varchar(15), day varchar(10), price int, bookingid varchar(15))");
 
                 }catch(Exception g){
                     
                 }
                 finally{
-                    my.st.executeUpdate("insert into "+ne+" values('"+date1+"','"+selectedDuration+"',"+tot+")");
+                    my.st.executeUpdate("insert into "+ne+" values('"+date1+"','"+selectedDuration+"',"+tot+",'"+iddd+"')");
                 }
 
 
-                JOptionPane.showMessageDialog(null, "Room Booking for :"+" " + mn +"days"+ "\nAmount Payable " +" "+ tot, "Booking",JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Room Booking for :"+" " + mn +"days"+ "\nAmount Payable " +" ₹"+ tot, "Booking",JOptionPane.PLAIN_MESSAGE);
                 dispose();
+                new recipt(ne, iddd);
             }
         }catch(Exception d){
             System.out.println(d);
@@ -184,7 +191,7 @@ public class bookingpage extends JFrame implements ActionListener{
     }
 
     public static void main(String[] args) {
-        new bookingpage("single","ne");
+        new bookingpage("single","Rudra73");
     }
     
 }
