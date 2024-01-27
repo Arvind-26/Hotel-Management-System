@@ -27,7 +27,7 @@ public class bedselectpage extends JFrame implements ActionListener{
         head.setBounds(10, 10, 100, 40);
         add(head);
 
-        ImageIcon img1 = new ImageIcon("Hotel-Management-System//hotelManagement//icon//singlebed.jpg");
+        ImageIcon img1 = new ImageIcon("Hotel-Management-System//hotelManagement//singlebed.jpg");
         Image scaledImage1 = img1.getImage().getScaledInstance(170, 170, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon1 = new ImageIcon(scaledImage1);
 
@@ -39,7 +39,7 @@ public class bedselectpage extends JFrame implements ActionListener{
         add(bsingle);
         bsingle.addActionListener(this);
 
-        ImageIcon img2 = new ImageIcon("Hotel-Management-System//hotelManagement//icon//doublebed.jpg");
+        ImageIcon img2 = new ImageIcon("Hotel-Management-System//hotelManagement//doublebed.jpg");
         Image scaledImage2 = img2.getImage().getScaledInstance(170, 170, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon2 = new ImageIcon(scaledImage2);
 
@@ -51,7 +51,7 @@ public class bedselectpage extends JFrame implements ActionListener{
         add(bdouble);
         bdouble.addActionListener(this);
 
-        ImageIcon img3 = new ImageIcon("Hotel-Management-System//hotelManagement//icon//triplebed.jpg");
+        ImageIcon img3 = new ImageIcon("Hotel-Management-System//hotelManagement//triplebed.jpg");
         Image scaledImage3 = img3.getImage().getScaledInstance(170, 170, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon3 = new ImageIcon(scaledImage3);
 
