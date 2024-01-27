@@ -189,9 +189,5 @@ public class bookingpage extends JFrame implements ActionListener{
         }
 
     }
-
-    public static void main(String[] args) {
-        new bookingpage("single","Rudra73");
-    }
     
 }

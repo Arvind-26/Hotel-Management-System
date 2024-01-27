@@ -111,8 +111,5 @@ public class recipt extends JFrame{
 
    
 
-    public static void main(String[] args) {
-        new recipt("Rudra73","@#1101$#");
-    }
     
 }

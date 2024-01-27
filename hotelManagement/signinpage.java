@@ -199,7 +199,4 @@ class signinpage extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public static void main(String[] args) {
-        new signinpage();
-    }
 }

@@ -20,7 +20,7 @@ public class homepage extends JFrame implements ActionListener {
         setLocation(400, 100); 
         setLayout(null);
 
-        ImageIcon img1 = new ImageIcon("Hotel-Management-System\\icon\\pc.png");
+        ImageIcon img1 = new ImageIcon("Hotel-Management-System\\hotelManagement\\icon\\pc.png");
         Image scaledImage1 = img1.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon11 = new ImageIcon(scaledImage1);
 
@@ -31,7 +31,7 @@ public class homepage extends JFrame implements ActionListener {
         add(btn1);
         btn1.addActionListener(this);
 
-        ImageIcon img2 = new ImageIcon("Hotel-Management-System\\icon\\list.png");
+        ImageIcon img2 = new ImageIcon("Hotel-Management-System\\hotelManagement\\icon\\list.png");
         Image scaledImage2 = img2.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon22 = new ImageIcon(scaledImage2);
 
@@ -42,7 +42,7 @@ public class homepage extends JFrame implements ActionListener {
         add(btn2);
         btn2.addActionListener(this);
 
-        ImageIcon img3 = new ImageIcon("Hotel-Management-System\\icon\\person.png");
+        ImageIcon img3 = new ImageIcon("Hotel-Management-System\\hotelManagement\\icon\\person.png");
         Image scaledImage3 = img3.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon33 = new ImageIcon(scaledImage3);
 
@@ -74,7 +74,4 @@ public class homepage extends JFrame implements ActionListener {
             dispose();
             new profilepage(ne);
         }}
-    public static void main(String[] args) {
-        new homepage("nr");
-    }
 }

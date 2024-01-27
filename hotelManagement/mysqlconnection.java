@@ -16,7 +16,4 @@ public class mysqlconnection {
         }
     }
 
-    public static void main(String[] args) {
-        new mysqlconnection();
-    }
 }

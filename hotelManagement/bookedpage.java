@@ -76,8 +76,5 @@ public class bookedpage extends JFrame implements ActionListener{
         dispose();
         new homepage(ne);
     }
-    public static void main(String[] args) {
-        new bookedpage("arvind14");
-    }
     
 }
