@@ -17,7 +17,7 @@ import javax.swing.JTable;
 
 public class bookedpage extends JFrame implements ActionListener{
     String ne;
-    String data[][]= new String[11][3];
+    String data[][]= new String[11][4];
     JTable t;
     JScrollPane p;
     JButton bback;
@@ -39,11 +39,11 @@ public class bookedpage extends JFrame implements ActionListener{
 
         mysqlconnection con = new mysqlconnection();
         int j=0;
-        String rew[] = {"date", "day", "price"};
+        String rew[] = {"bookingid","date", "day", "price"};
         try {
             ResultSet rs = con.st.executeQuery("select * from "+ne+"");
             while(rs.next()){
-                for(int i = 0;i<=2;i++){
+                for(int i = 0;i<=3;i++){
                     data[j][i] = rs.getString(rew[i]);
                 }
                 j++;
@@ -52,7 +52,7 @@ public class bookedpage extends JFrame implements ActionListener{
             System.out.println(e);
         }       
 
-        String column[] = {"Date", "Days","Price"};
+        String column[] = {"bookingid","Date", "Days","Price"};
         JTable jt=new JTable(data,column);  
         jt.setEnabled(false);     
         jt.setRowHeight(20);     
@@ -77,7 +77,7 @@ public class bookedpage extends JFrame implements ActionListener{
         new homepage(ne);
     }
     public static void main(String[] args) {
-        new bookedpage("Rudra73");
+        new bookedpage("arvind14");
     }
     
 }
