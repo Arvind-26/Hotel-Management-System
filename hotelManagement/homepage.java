@@ -74,7 +74,4 @@ public class homepage extends JFrame implements ActionListener {
             dispose();
             new profilepage(ne);
         }}
-    public static void main(String[] args) {
-        new homepage("nr");
-    }
 }
