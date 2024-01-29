@@ -7,9 +7,10 @@ import com.toedter.calendar.JDateChooser;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 import java.util.Random;
 
-public class bookingpage extends JFrame implements ActionListener{
+public class bookingpage extends JFrame implements ActionListener {
     JLabel head, db, sb, pricee;
     JDateChooser date;
     JComboBox selecttime;
@@ -17,7 +18,8 @@ public class bookingpage extends JFrame implements ActionListener{
     int tot, rs;
     String ne;
     Random id;
-    bookingpage(String bed,String nr){
+
+    bookingpage(String bed, String nr) {
         super("Booking");
         ne = nr;
         setSize(600, 500);
@@ -30,7 +32,7 @@ public class bookingpage extends JFrame implements ActionListener{
         head.setBounds(10, 10, 300, 40);
         add(head);
 
-        if(bed.equals("single")){
+        if (bed.equals("single")) {
             rs = 300;
             JLabel que = new JLabel("1 Bedroom price :");
             que.setFont(new Font("Raleway", Font.BOLD, 20));
@@ -40,8 +42,7 @@ public class bookingpage extends JFrame implements ActionListener{
             price.setFont(new Font("Raleway", Font.BOLD, 24));
             price.setBounds(20, 80, 200, 56);
             add(price);
-        }
-        else if(bed.equals("double")){
+        } else if (bed.equals("double")) {
             rs = 600;
             JLabel que = new JLabel("2 Bedroom price :");
             que.setFont(new Font("Raleway", Font.BOLD, 20));
@@ -51,8 +52,7 @@ public class bookingpage extends JFrame implements ActionListener{
             price.setFont(new Font("Raleway", Font.BOLD, 24));
             price.setBounds(20, 80, 200, 56);
             add(price);
-        }
-        else if(bed.equals("triple")){
+        } else if (bed.equals("triple")) {
             JLabel que = new JLabel("3 Bedroom price :");
             que.setFont(new Font("Raleway", Font.BOLD, 20));
             que.setBounds(20, 70, 300, 20);
@@ -70,17 +70,19 @@ public class bookingpage extends JFrame implements ActionListener{
         add(db);
 
         date = new JDateChooser();
-        date.setBounds(170,180,250,25);
+        date.setMinSelectableDate(new Date());
+        date.setBounds(170, 180, 250, 25);
         add(date);
 
         sb = new JLabel("Select Number of Days :");
         sb.setFont(new Font("Raleway", Font.BOLD, 15));
         sb.setBounds(20, 220, 200, 23);
         add(sb);
-        
-        String []s = {"--No days selected--","1 Day","2 Days","3 Days","4 Days","5 Days","6 Days","7 Days","8 Days","9 Days","10 Days"};
+
+        String[] s = { "--No days selected--", "1 Day", "2 Days", "3 Days", "4 Days", "5 Days", "6 Days", "7 Days",
+                "8 Days", "9 Days", "10 Days" };
         selecttime = new JComboBox<>(s);
-        selecttime.setBounds(210,220,160,25);
+        selecttime.setBounds(210, 220, 160, 25);
         add(selecttime);
 
         bback = new JButton("Back");
@@ -98,7 +100,7 @@ public class bookingpage extends JFrame implements ActionListener{
         pricee = new JLabel();
         pricee.setFont(new Font("Raleway", Font.BOLD, 25));
         pricee.setBounds(50, 340, 300, 23);
-        add(pricee);  
+        add(pricee);
         pricee.setVisible(false);
 
         book = new JButton("Book");
@@ -108,86 +110,82 @@ public class bookingpage extends JFrame implements ActionListener{
         book.addActionListener(this);
         book.setVisible(false);
 
-        
-
         setResizable(false);
         setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        try{
-        
-        
+        try {
+
             int mn = selecttime.getSelectedIndex();
-            if(mn == 1){
-                tot = rs*mn;
-            }else if(mn == 2){
-                tot = rs*mn;
-            }else if(mn == 3){
-                tot = rs*mn;
-            }else if(mn == 4){
-                tot = rs*mn;
-            }else if(mn == 5){
-                tot = rs*mn;
-            }else if(mn == 6){
-                tot = rs*mn;
-            }else if(mn == 7){
-                tot = rs*mn;
-            }else if(mn == 8){
-                tot = rs*mn;
-            }else if(mn == 9){
-                tot = rs*mn;
-            }else if(mn == 10){
-                tot = rs*mn;
+            if (mn == 1) {
+                tot = rs * mn;
+            } else if (mn == 2) {
+                tot = rs * mn;
+            } else if (mn == 3) {
+                tot = rs * mn;
+            } else if (mn == 4) {
+                tot = rs * mn;
+            } else if (mn == 5) {
+                tot = rs * mn;
+            } else if (mn == 6) {
+                tot = rs * mn;
+            } else if (mn == 7) {
+                tot = rs * mn;
+            } else if (mn == 8) {
+                tot = rs * mn;
+            } else if (mn == 9) {
+                tot = rs * mn;
+            } else if (mn == 10) {
+                tot = rs * mn;
             }
 
-            String selectedDuration = (String)selecttime.getSelectedItem();
-            String date1 = ((JTextField)date.getDateEditor().getUiComponent()).getText();
-            
-            if(e.getSource().equals(dane)){
-                if(mn==0 || date1.equals("")){
-                        JOptionPane.showMessageDialog(null, "Please Enter all the Filds Proerly, They all are Imortant.",
-                         "Warning",
-                         JOptionPane.WARNING_MESSAGE);
-                    }
-                else {                    
-                    pricee.setText("Total Amount :"+" ₹"+tot);
-                
+            String selectedDuration = (String) selecttime.getSelectedItem();
+            String date1 = ((JTextField) date.getDateEditor().getUiComponent()).getText();
+
+            if (e.getSource().equals(dane)) {
+                if (mn == 0 || date1.equals("")) {
+                    JOptionPane.showMessageDialog(null, "Please Enter all the Filds Proerly, They all are Imortant.",
+                            "Warning",
+                            JOptionPane.WARNING_MESSAGE);
+                } else {
+                    pricee.setText("Total Amount :" + " ₹" + tot);
+
                     pricee.setVisible(true);
                     book.setVisible(true);
-                }      
-            }
-            else if(e.getSource().equals(bback)){
+                }
+            } else if (e.getSource().equals(bback)) {
                 dispose();
                 new bedselectpage(ne);
-            }
-            else if(e.getSource().equals(book)){
+            } else if (e.getSource().equals(book)) {
 
                 mysqlconnection my = new mysqlconnection();
                 id = new Random();
                 int idd = id.nextInt(999, 9999);
-                String iddd = "@#"+idd+"$#";
+                String iddd = "@#" + idd + "$#";
 
-                try{
-                    my.st.executeUpdate("create table "+ne+" (date varchar(15), day varchar(10), price int, bookingid varchar(15))");
+                try {
+                    my.st.executeUpdate("create table " + ne
+                            + " (date varchar(15), day varchar(10), price int, bookingid varchar(15))");
 
-                }catch(Exception g){
-                    
+                } catch (Exception g) {
+
+                } finally {
+                    my.st.executeUpdate("insert into " + ne + " values('" + date1 + "','" + selectedDuration + "',"
+                            + tot + ",'" + iddd + "')");
                 }
-                finally{
-                    my.st.executeUpdate("insert into "+ne+" values('"+date1+"','"+selectedDuration+"',"+tot+",'"+iddd+"')");
-                }
 
-
-                JOptionPane.showMessageDialog(null, "Room Booking for :"+" " + mn +"days"+ "\nAmount Payable " +" ₹"+ tot, "Booking",JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(null,
+                        "Room Booking for :" + " " + mn + "days" + "\nAmount Payable " + " ₹" + tot, "Booking",
+                        JOptionPane.PLAIN_MESSAGE);
                 dispose();
                 new recipt(ne, iddd);
             }
-        }catch(Exception d){
+        } catch (Exception d) {
             System.out.println(d);
         }
 
     }
-    
+
 }

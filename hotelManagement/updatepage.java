@@ -5,19 +5,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-public class updatepage extends JFrame implements ActionListener{
-    JTextField  age, add, country, mailfild, phone;
+public class updatepage extends JFrame implements ActionListener {
+    JTextField age, add, country, mailfild, phone;
     JRadioButton male, female, other;
     String ne;
     JButton bback, savechange, del;
-    updatepage(String nr){
+
+    updatepage(String nr) {
         super("Update");
         ne = nr;
         setSize(600, 500);
@@ -27,39 +27,37 @@ public class updatepage extends JFrame implements ActionListener{
         mysqlconnection ch = new mysqlconnection();
         ne = nr;
         ResultSet rs;
-        String [] h = new String[10];
-        try{
-            rs = ch.st.executeQuery("select * from users where username= '"+ne+"'");
+        String[] h = new String[10];
+        try {
+            rs = ch.st.executeQuery("select * from users where username= '" + ne + "'");
             rs.next();
 
-            String [] q = {"firstname","middlename","lastname","age","gender","address","country","mail","phonenum","username"};
+            String[] q = { "firstname", "middlename", "lastname", "age", "gender", "address", "country", "mail",
+                    "phonenum", "username" };
 
-            for(int i = 0; i<q.length ;i++){
+            for (int i = 0; i < q.length; i++) {
                 h[i] = rs.getString(q[i]);
             }
-        }catch(Exception a){
+        } catch (Exception a) {
             System.out.println(a);
         }
-
-
 
         JLabel head = new JLabel("Make Changes");
         head.setFont(new Font("Raleway", Font.BOLD, 30));
         head.setBounds(10, 10, 250, 40);
         add(head);
 
-        JLabel firstname = new JLabel("First Name :"+" "+h[0]);
+        JLabel firstname = new JLabel("First Name :" + " " + h[0]);
         firstname.setFont(new Font("Raleway", Font.BOLD, 15));
         firstname.setBounds(20, 70, 200, 56);
         add(firstname);
 
-
-        JLabel midname = new JLabel("Middle Name :"+" "+h[1]);
+        JLabel midname = new JLabel("Middle Name :" + " " + h[1]);
         midname.setFont(new Font("Raleway", Font.BOLD, 15));
         midname.setBounds(200, 70, 200, 56);
         add(midname);
 
-        JLabel lastname = new JLabel("Last Name :"+" "+h[2]);
+        JLabel lastname = new JLabel("Last Name :" + " " + h[2]);
         lastname.setFont(new Font("Raleway", Font.BOLD, 15));
         lastname.setBounds(395, 70, 200, 56);
         add(lastname);
@@ -74,7 +72,7 @@ public class updatepage extends JFrame implements ActionListener{
         add(age);
         age.setText(h[3]);
 
-        JLabel Gender = new JLabel("Gender : "+ " "+h[4]);
+        JLabel Gender = new JLabel("Gender : " + " " + h[4]);
         Gender.setFont(new Font("Raleway", Font.BOLD, 15));
         Gender.setBounds(300, 120, 150, 56);
         add(Gender);
@@ -144,43 +142,42 @@ public class updatepage extends JFrame implements ActionListener{
     }
 
     @Override
-        public void actionPerformed(ActionEvent g){
-            if(g.getSource().equals(bback)){
-                new profilepage(ne);
-                dispose();
-            }
-            else if (g.getSource().equals(savechange)){
-                int aagg = Integer.parseInt(age.getText());
-                String ad = add.getText();
-                String ct = country.getText();
-                String m = mailfild.getText();
-                long p = Long.parseLong(phone.getText());
-                mysqlconnection ch = new mysqlconnection();
+    public void actionPerformed(ActionEvent g) {
+        if (g.getSource().equals(bback)) {
+            new profilepage(ne);
+            dispose();
+        } else if (g.getSource().equals(savechange)) {
+            int aagg = Integer.parseInt(age.getText());
+            String ad = add.getText();
+            String ct = country.getText();
+            String m = mailfild.getText();
+            long p = Long.parseLong(phone.getText());
+            mysqlconnection ch = new mysqlconnection();
 
+            try {
+                ch.st.executeUpdate("update users set age =" + aagg + " , address ='" + ad + "', country ='" + ct
+                        + "', mail ='" + m + "',phonenum =" + p + " where username ='" + ne + "'");
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+            new profilepage(ne);
+            dispose();
+
+        } else if (g.getSource().equals(del)) {
+            mysqlconnection ch = new mysqlconnection();
+            try {
+                ch.st.executeUpdate("delete from users where username = '" + ne + "'");
                 try {
-                    ch.st.executeUpdate("update users set age ="+aagg+" , address ='"+ad+"', country ='"+ct+"', mail ='"+m+"',phonenum ="+p+" where username ='"+ne+"'");
-                } catch (SQLException e) {
-                    System.out.println(e);
+                    ch.st.executeUpdate("drop table " + ne + "");
+                } catch (Exception d) {
+
                 }
-                new profilepage(ne);
                 dispose();
-                
-            }else if(g.getSource().equals(del)){
-                mysqlconnection ch = new mysqlconnection();
-                try{
-                    ch.st.executeUpdate("delete from users where username = '"+ne+"'");
-                    try{
-                        ch.st.executeUpdate("drop table "+ne+"");
-                    }catch(Exception d){
-                    
-                    }
-                    dispose();
-                    new loginPage();
-                }catch(Exception f){
-                    System.out.println(f);
-                }
+                new loginPage();
+            } catch (Exception f) {
+                System.out.println(f);
             }
         }
+    }
 
-    
 }

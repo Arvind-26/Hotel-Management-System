@@ -62,23 +62,23 @@ class loginPage extends JFrame implements ActionListener {
   @Override
   public void actionPerformed(ActionEvent e) {
     try {
-      if(e.getSource()==blogin){
+      if (e.getSource() == blogin) {
         String username = tuser.getText();
-        char []password = ppass.getPassword();
+        char[] password = ppass.getPassword();
         String password1 = new String(password);
         mysqlconnection con = new mysqlconnection();
-        ResultSet rs = con.st.executeQuery("select * from users where username='"+username+"' and password='"+password1+"'");
+        ResultSet rs = con.st
+            .executeQuery("select * from users where username='" + username + "' and password='" + password1 + "'");
         rs.next();
-        try{
-        if(rs.getString("username").equals(username) && rs.getString("password").equals(password1)){
-          new homepage(username);
-        }}
-        catch(Exception o){
-          JOptionPane.showMessageDialog(null, "Invalid Username or Password","Error",JOptionPane.ERROR_MESSAGE);
+        try {
+          if (rs.getString("username").equals(username) && rs.getString("password").equals(password1)) {
+            new homepage(username);
+            dispose();
+          }
+        } catch (Exception o) {
+          JOptionPane.showMessageDialog(null, "Invalid Username or Password", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        dispose();
-      }
-      else if(e.getSource()==bsignin){
+      } else if (e.getSource() == bsignin) {
         new signinpage();
         dispose();
       }

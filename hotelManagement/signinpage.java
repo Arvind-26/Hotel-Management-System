@@ -170,23 +170,30 @@ class signinpage extends JFrame {
                     long ph1 = Long.parseLong(phone.getText());
                     char[] pass1 = password.getPassword();
                     String pass2 = new String(pass1);
-                    nr = n1 + rr;
+                    if (pass2.length() > 10) {
+                        JOptionPane.showMessageDialog(null, "Plaese enter password under 10 digits.",
+                                "Warning",
+                                JOptionPane.WARNING_MESSAGE);
+                    } else {
+                        nr = n1 + rr;
 
-                    mysqlconnection data = new mysqlconnection();
-                    data.st.executeUpdate("insert into users values('" + nr + "','" + pass2 + "','" + n1 + "','" + n2
-                            + "','" + n3 + "'," + a1 + ",'" + ggg + "','" + add1 + "','" + c1 + "','" + m1 + "'," + ph1
-                            + ")");
+                        mysqlconnection data = new mysqlconnection();
+                        data.st.executeUpdate(
+                                "insert into users values('" + nr + "','" + pass2 + "','" + n1 + "','" + n2
+                                        + "','" + n3 + "'," + a1 + ",'" + ggg + "','" + add1 + "','" + c1 + "','" + m1
+                                        + "'," + ph1
+                                        + ")");
 
-                    JOptionPane.showMessageDialog(null, "Username : " + nr + "\n Password : " + pass2, "Sign in Successfully",JOptionPane.PLAIN_MESSAGE);
-                    dispose();
-                    new homepage(nr);       
-
+                        JOptionPane.showMessageDialog(null, "Username : " + nr + "\n Password : " + pass2,
+                                "Sign in Successfully", JOptionPane.PLAIN_MESSAGE);
+                        dispose();
+                        new homepage(nr);
+                    }
                 } catch (Exception c) {
                     JOptionPane.showMessageDialog(null, "Please Enter all the Filds Proerly, They all are Imortant.",
-                     "Warning",
-                     JOptionPane.WARNING_MESSAGE);
+                            "Warning",
+                            JOptionPane.WARNING_MESSAGE);
 
-                    
                 }
 
             }
