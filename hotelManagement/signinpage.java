@@ -1,5 +1,6 @@
 package hotelManagement;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -16,6 +18,7 @@ import javax.swing.JTextField;
 class signinpage extends JFrame {
 
     JTextField fname, mname, lname, age, add, country, mailfild, phone;
+    JPanel sidepan , mainpan;
     JPasswordField password;
     JRadioButton male, female, other;
     JButton signin;
@@ -25,10 +28,13 @@ class signinpage extends JFrame {
     signinpage() {
 
         super("Sign in");
-        setSize(600, 500);
+        setSize(850, 470);
         setLocation(400, 100);
+        getContentPane().setBackground(Color.lightGray);
 
-        JLabel head = new JLabel("Sign In");
+        
+
+        /*  JLabel head = new JLabel("Sign In");
         head.setFont(new Font("Raleway", Font.BOLD, 30));
         head.setBounds(10, 10, 100, 40);
         add(head);
@@ -133,7 +139,7 @@ class signinpage extends JFrame {
         password = new JPasswordField(10);
         password.setFont(new Font("Raleway", Font.BOLD, 12));
         password.setBounds(120, 360, 300, 18);
-        add(password);
+        add(password); 
 
         r = new Random();
         int rr = r.nextInt(90) + 10;
@@ -141,7 +147,7 @@ class signinpage extends JFrame {
         signin = new JButton("Create Account");
         signin.setFont(new Font("Raleway", Font.BOLD, 12));
         signin.setBounds(210, 400, 150, 30);
-        add(signin);
+        add(signin); 
         signin.addActionListener(new ActionListener() {
 
             @Override
@@ -170,6 +176,7 @@ class signinpage extends JFrame {
                     long ph1 = Long.parseLong(phone.getText());
                     char[] pass1 = password.getPassword();
                     String pass2 = new String(pass1);
+                    System.out.println(pass2);
                     if (pass2.length() > 10) {
                         JOptionPane.showMessageDialog(null, "Plaese enter password under 10 digits.",
                                 "Warning",
@@ -198,12 +205,15 @@ class signinpage extends JFrame {
 
             }
 
-        });
+        }); */
 
         setLayout(null);
         setResizable(false);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    public static void main(String[] args) {
+        new signinpage();
     }
 
 }

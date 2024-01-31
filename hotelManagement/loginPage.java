@@ -15,6 +15,7 @@ class loginPage extends JFrame implements ActionListener {
   public loginPage() {
     setSize(450, 400);
     setLocation(440, 170);
+    getContentPane().setBackground(Color.lightGray);
     setLayout(null);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -66,6 +67,7 @@ class loginPage extends JFrame implements ActionListener {
         String username = tuser.getText();
         char[] password = ppass.getPassword();
         String password1 = new String(password);
+        System.out.println(password1);
         mysqlconnection con = new mysqlconnection();
         ResultSet rs = con.st
             .executeQuery("select * from users where username='" + username + "' and password='" + password1 + "'");

@@ -24,6 +24,7 @@ public class bookingpage extends JFrame implements ActionListener {
         ne = nr;
         setSize(600, 500);
         setLocation(400, 100);
+        getContentPane().setBackground(Color.lightGray);
         setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 

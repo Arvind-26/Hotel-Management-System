@@ -1,6 +1,8 @@
 package hotelManagement;
 
 import javax.swing.*;
+
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -18,6 +20,7 @@ public class bedselectpage extends JFrame implements ActionListener{
         ne = nr;
         setSize(600, 500);
         setLocation(400, 100);
+        getContentPane().setBackground(Color.lightGray);
         setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 

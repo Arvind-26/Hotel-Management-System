@@ -34,6 +34,7 @@ public class profilepage extends JFrame implements ActionListener{
 
         setSize(600, 500);
         setLocation(400, 100);
+        getContentPane().setBackground(Color.lightGray);
         setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 

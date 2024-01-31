@@ -1,5 +1,6 @@
 package hotelManagement;
 
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +19,7 @@ public class homepage extends JFrame implements ActionListener {
         ne = nr;
         setSize(600, 500);
         setLocation(400, 100); 
+        getContentPane().setBackground(Color.lightGray);
         setLayout(null);
 
         ImageIcon img1 = new ImageIcon("icons\\pc.png");

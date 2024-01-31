@@ -1,5 +1,6 @@
 package hotelManagement;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,6 +23,7 @@ public class updatepage extends JFrame implements ActionListener {
         ne = nr;
         setSize(600, 500);
         setLocation(400, 100);
+        getContentPane().setBackground(Color.lightGray);
         setLayout(null);
 
         mysqlconnection ch = new mysqlconnection();

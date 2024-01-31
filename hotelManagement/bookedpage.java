@@ -1,5 +1,6 @@
 package hotelManagement;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -26,6 +27,7 @@ public class bookedpage extends JFrame implements ActionListener{
         ne = nr;
         setSize(600, 500);
         setLocation(400, 100);
+        getContentPane().setBackground(Color.lightGray);
         setLayout(new FlowLayout(FlowLayout.LEFT));
 
         JLabel head = new JLabel("Booked History");
