@@ -1,11 +1,15 @@
 package hotelManagement;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.sql.ResultSet;
 
 class loginPage extends JFrame implements ActionListener  {
@@ -16,17 +20,29 @@ class loginPage extends JFrame implements ActionListener  {
   JPanel plogin,psign;
 
   public loginPage() {
+    super("BEDZ");
     setSize(850, 478);
     setLocationRelativeTo(null);
     setLayout(null);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     getContentPane().setBackground(Color.WHITE);
 
+    Image tr = Toolkit.getDefaultToolkit().getImage("package\\apk\\icons\\tringle.png");
+    setIconImage(tr);
+
+
     psign = new JPanel();
     psign.setBounds(425, 0, 425, 478);
     psign.setBackground(new Color(225,95,31));
     psign.setLayout(null);
     add(psign);
+
+    ImageIcon logo = new ImageIcon("package\\apk\\icons\\Logo.png");
+    Image logo1 = logo.getImage().getScaledInstance(300, 200,Image.SCALE_DEFAULT);
+    JLabel logolab = new JLabel(new ImageIcon(logo1));
+    logolab.setBounds(0,50,400,200);
+    psign.add(logolab);
+    
 
     plogin = new JPanel();
     plogin.setBounds(0, 0, 425, 478);    
@@ -41,7 +57,7 @@ class loginPage extends JFrame implements ActionListener  {
     plogin.add(ltitle);
 
     luser = new JLabel("Username");
-    luser.setFont(new Font("Ralway", Font.BOLD, 13));
+    luser.setFont(new Font("Times", Font.BOLD, 13));
     luser.setBounds(40, 150, 120, 20);
     plogin.add(luser);
 
@@ -51,7 +67,7 @@ class loginPage extends JFrame implements ActionListener  {
     plogin.add(tuser);
 
     lpass = new JLabel("Password");
-    lpass.setFont(new Font("Ralway", Font.BOLD, 13));
+    lpass.setFont(new Font("Times", Font.BOLD, 13));
     lpass.setBounds(40, 240, 120, 20);
     plogin.add(lpass);
 
@@ -70,9 +86,9 @@ class loginPage extends JFrame implements ActionListener  {
     blogin.addActionListener(this);
 
     ltitle2 = new JLabel("CREATE ACCOUNT");
-    ltitle2.setFont(new Font("Times", Font.BOLD, 38));
+    ltitle2.setFont(new Font("Times", Font.PLAIN, 15));
     ltitle2.setForeground(Color.WHITE);
-    ltitle2.setBounds(20, 40, 380, 40);
+    ltitle2.setBounds(145, 300, 380, 40);
     psign.add(ltitle2);
 
     bsignin = new JButton("Sign in");
@@ -94,7 +110,6 @@ class loginPage extends JFrame implements ActionListener  {
         String username = tuser.getText();
         char[] password = ppass.getPassword();
         String password1 = new String(password);
-        System.out.println(password1);
         mysqlconnection con = new mysqlconnection();
         ResultSet rs = con.st
             .executeQuery("select * from users where username='" + username + "' and password='" + password1 + "'");
