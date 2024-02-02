@@ -42,7 +42,7 @@ public class bedselectpage extends JFrame implements ActionListener{
         head.setForeground(Color.white);
         add(head);
 
-        ImageIcon img1 = new ImageIcon("Hotel-Management-System\\icons\\singlebed.jpg");
+        ImageIcon img1 = new ImageIcon("package\\apk\\icons\\singlebed.jpg");
         Image scaledImage1 = img1.getImage().getScaledInstance(230, 230, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon1 = new ImageIcon(scaledImage1);
 
@@ -53,7 +53,7 @@ public class bedselectpage extends JFrame implements ActionListener{
         String l1 = "<html>A single hotel room is designed for One guest, featuring a single bed and essential amenities like a TV, desk, and en-suite bathroom. It provides a comfortable and efficient space for solo travelers.</html>";
 
         lsdes = new JLabel(l1);
-        lsdes.setFont(new Font("Raleway", Font.PLAIN, 12));
+        lsdes.setFont(new Font("Raleway", Font.PLAIN, 9));
         lsdes.setBounds(10,230,210,60);
         ps.add(lsdes);
 
@@ -72,7 +72,7 @@ public class bedselectpage extends JFrame implements ActionListener{
         pd.setLayout(null);
         add(pd);
 
-        ImageIcon img2 = new ImageIcon("Hotel-Management-System\\icons\\doublebed.jpg");
+        ImageIcon img2 = new ImageIcon("package\\apk\\icons\\doublebed.jpg");
         Image scaledImage2 = img2.getImage().getScaledInstance(230, 230, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon2 = new ImageIcon(scaledImage2);
 
@@ -80,10 +80,10 @@ public class bedselectpage extends JFrame implements ActionListener{
         ld.setBounds(0,0,230,230);
         pd.add(ld);
 
-        String l2 = "<html>A double bed hotel room is designed to accommodate Two guests, Featuring a double bed and essential amenities such as a TV, desk, and en-suite bathroom. It provides a comfortable and convenient space for couples or individuals who prefer more sleeping space.</html>";
+        String l2 = "<html>A double bed hotel room is designed to accommodate Two guests, a double bed and essential amenities TV and en-suite bathroom. It provides a comfortable and convenient space for couples who prefer more sleeping space.</html>";
 
         lddes = new JLabel(l2);
-        lddes.setFont(new Font("Raleway", Font.PLAIN, 12));
+        lddes.setFont(new Font("Raleway", Font.PLAIN, 9));
         lddes.setBounds(10,230,210,60);
         pd.add(lddes);
 
@@ -102,7 +102,7 @@ public class bedselectpage extends JFrame implements ActionListener{
         pt.setLayout(null);
         add(pt);
 
-        ImageIcon img3 = new ImageIcon("Hotel-Management-System\\icons\\triplebed.jpg");
+        ImageIcon img3 = new ImageIcon("package\\apk\\icons\\triplebed.jpg");
         Image scaledImage3 = img3.getImage().getScaledInstance(230, 230, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon3 = new ImageIcon(scaledImage3);
 
@@ -113,7 +113,7 @@ public class bedselectpage extends JFrame implements ActionListener{
         String l3 = "<html>A triple bed hotel room is tailored for Three guests, typically offering three separate beds or a combination of larger and smaller beds. Equipped with essential amenities like a TV, desk, and en-suite bathroom.</html>";
 
         ltdes = new JLabel(l3);
-        ltdes.setFont(new Font("Raleway", Font.PLAIN, 12));
+        ltdes.setFont(new Font("Raleway", Font.PLAIN, 9));
         ltdes.setBounds(10,230,210,60);
         pt.add(ltdes);
 

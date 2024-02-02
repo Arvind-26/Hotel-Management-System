@@ -2,13 +2,18 @@ package hotelManagement;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
@@ -17,131 +22,163 @@ public class updatepage extends JFrame implements ActionListener {
     JRadioButton male, female, other;
     String ne;
     JButton bback, savechange, del;
+    JPanel sidepan;
 
     updatepage(String nr) {
-        super("Update");
+        super("BEDZ");
         ne = nr;
-        setSize(600, 500);
-        setLocation(400, 100);
-        getContentPane().setBackground(Color.lightGray);
+        setSize(800, 478);
+        setLocationRelativeTo(null);
         setLayout(null);
 
         mysqlconnection ch = new mysqlconnection();
         ne = nr;
         ResultSet rs;
-        String[] h = new String[10];
+        String[] w = new String[10];
         try {
             rs = ch.st.executeQuery("select * from users where username= '" + ne + "'");
             rs.next();
 
-            String[] q = { "firstname", "middlename", "lastname", "age", "gender", "address", "country", "mail",
+            String[] q = { "firstname", "lastname", "age", "gender", "address", "country", "mail",
                     "phonenum", "username" };
 
             for (int i = 0; i < q.length; i++) {
-                h[i] = rs.getString(q[i]);
+                w[i] = rs.getString(q[i]);
             }
         } catch (Exception a) {
             System.out.println(a);
         }
 
-        JLabel head = new JLabel("Make Changes");
-        head.setFont(new Font("Raleway", Font.BOLD, 30));
-        head.setBounds(10, 10, 250, 40);
+        Image tr = Toolkit.getDefaultToolkit().getImage("package\\apk\\icons\\tringle.png");
+        setIconImage(tr);
+
+        sidepan = new JPanel();
+        sidepan.setBounds(0, 0, 180, 478);
+        ImageIcon bgg = new ImageIcon("package\\apk\\icons\\bgg.png");
+        Image bgg2 = bgg.getImage().getScaledInstance(200,478, Image.SCALE_DEFAULT);
+        JLabel bgg3 = new JLabel(new ImageIcon(bgg2));
+        bgg3.setBounds(0,0,200,478);
+        sidepan.add(bgg3);
+        sidepan.setLayout(null);
+        add(sidepan);
+
+       
+
+        JLabel head = new JLabel("UPDATE INFORMATION");
+        head.setFont(new Font("Times", Font.BOLD, 30));
+        head.setBounds(200, 10, 400, 40);
+        head.setForeground(new Color(225,95,31));
         add(head);
+        
 
-        JLabel firstname = new JLabel("First Name :" + " " + h[0]);
-        firstname.setFont(new Font("Raleway", Font.BOLD, 15));
-        firstname.setBounds(20, 70, 200, 56);
-        add(firstname);
+        JLabel i2 = new JLabel(w[0]+" "+w[1]);
+        i2.setFont(new Font("Times", Font.BOLD, 25));
+        i2.setBounds(200, 70, 250, 30);
+        add(i2);
+         
 
-        JLabel midname = new JLabel("Middle Name :" + " " + h[1]);
-        midname.setFont(new Font("Raleway", Font.BOLD, 15));
-        midname.setBounds(200, 70, 200, 56);
-        add(midname);
-
-        JLabel lastname = new JLabel("Last Name :" + " " + h[2]);
-        lastname.setFont(new Font("Raleway", Font.BOLD, 15));
-        lastname.setBounds(395, 70, 200, 56);
-        add(lastname);
-
-        JLabel uage = new JLabel("Age : ");
-        uage.setFont(new Font("Raleway", Font.BOLD, 15));
-        uage.setBounds(20, 120, 100, 56);
+        JLabel i4 = new JLabel(ne);
+        i4.setFont(new Font("Times", Font.PLAIN, 19));
+        i4.setBounds(200, 95, 100, 30);
+        add(i4);
+        
+       
+        
+        JLabel uage = new JLabel("Age");
+        uage.setFont(new Font("Times", Font.BOLD, 13));
+        uage.setBounds(200, 150, 250, 30);
         add(uage);
         age = new JTextField(2);
-        age.setFont(new Font("Raleway", Font.BOLD, 15));
-        age.setBounds(90, 140, 100, 20);
+        age.setFont(new Font("Times", Font.PLAIN, 17));
+        age.setBounds(255, 150, 100, 30);
         add(age);
-        age.setText(h[3]);
+        age.setText(w[2]);
+          
 
-        JLabel Gender = new JLabel("Gender : " + " " + h[4]);
-        Gender.setFont(new Font("Raleway", Font.BOLD, 15));
-        Gender.setBounds(300, 120, 150, 56);
-        add(Gender);
+        
 
-        JLabel adss = new JLabel("Address : ");
-        adss.setFont(new Font("Raleway", Font.BOLD, 15));
-        adss.setBounds(20, 170, 200, 56);
+        JLabel adss = new JLabel("City");
+        adss.setFont(new Font("Times", Font.BOLD, 13));
+        adss.setBounds(200, 200, 150, 30);
         add(adss);
         add = new JTextField();
-        add.setFont(new Font("Raleway", Font.BOLD, 15));
-        add.setBounds(100, 190, 250, 20);
+        add.setFont(new Font("Times", Font.PLAIN, 17));
+        add.setBounds(255, 200, 350, 30);
         add(add);
-        add.setText(h[5]);
+        add.setText(w[4]);
 
-        JLabel count = new JLabel("Country : ");
-        count.setFont(new Font("Raleway", Font.BOLD, 15));
-        count.setBounds(370, 170, 100, 56);
+       
+
+        JLabel count = new JLabel("Country");
+        count.setFont(new Font("Times", Font.BOLD, 13));
+        count.setBounds(200, 250, 150, 30);
         add(count);
         country = new JTextField();
-        country.setFont(new Font("Raleway", Font.BOLD, 15));
-        country.setBounds(440, 190, 125, 18);
+        country.setFont(new Font("Times", Font.PLAIN, 17));
+        country.setBounds(255, 250, 350, 30);
         add(country);
-        country.setText(h[6]);
+        country.setText(w[5]);
 
-        JLabel mail = new JLabel("Mail Address : ");
-        mail.setFont(new Font("Raleway", Font.BOLD, 15));
-        mail.setBounds(20, 220, 150, 56);
+       
+
+        JLabel mail = new JLabel("Email");
+        mail.setFont(new Font("Times", Font.BOLD, 13));
+        mail.setBounds(200, 300, 150, 30);
         add(mail);
         mailfild = new JTextField();
-        mailfild.setFont(new Font("Raleway", Font.BOLD, 15));
-        mailfild.setBounds(150, 240, 300, 20);
+        mailfild.setFont(new Font("Times", Font.PLAIN, 17));
+        mailfild.setBounds(255, 300, 350, 30);
         add(mailfild);
-        mailfild.setText(h[7]);
+        mailfild.setText(w[6]);
+         
 
-        JLabel phn = new JLabel("Phone Number : ");
-        phn.setFont(new Font("Raleway", Font.BOLD, 15));
-        phn.setBounds(20, 280, 150, 56);
+        JLabel phn = new JLabel("Phone");
+        phn.setFont(new Font("Times", Font.BOLD, 13));
+        phn.setBounds(200, 350, 100, 30);
         add(phn);
         phone = new JTextField();
-        phone.setFont(new Font("Raleway", Font.BOLD, 15));
-        phone.setBounds(150, 300, 300, 20);
+        phone.setFont(new Font("Times", Font.PLAIN, 17));
+        phone.setBounds(255, 350, 350, 30);
         add(phone);
-        phone.setText(h[8]);
+        phone.setText(w[7]);
+        
+
+        
+
+       bback = new JButton("Back");
+        bback.setFont(new Font("Times", Font.PLAIN, 15));
+        bback.setBackground(Color.WHITE);
+        bback.setForeground(new Color(225,95,31));
+        bback.setBorderPainted(false);
+        bback.setBounds(25, 370, 125, 35);
+        bgg3.add(bback); 
+        bback.addActionListener(this);
+        
+
+        savechange = new JButton("Save Change");
+        savechange.setFont(new Font("Times", Font.PLAIN, 15));
+        savechange.setBackground(new Color(225,95,31));
+        savechange.setForeground(Color.WHITE);
+        savechange.setBorderPainted(false);
+        savechange.setBounds(620, 390, 125, 35);
+        add(savechange); 
+        savechange.addActionListener(this);
+        
+
+        del = new JButton("Delete Acount");
+        del.setFont(new Font("Times", Font.PLAIN, 15));
+        del.setBackground(new Color(225,95,31));
+        del.setForeground(Color.WHITE);
+        del.setBorderPainted(false);
+        del.setBounds(200, 390, 125, 35);
+        add(del); 
+        del.addActionListener(this);
 
         setVisible(true);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-        bback = new JButton("Back");
-        bback.setFont(new Font("Raleway", Font.BOLD, 12));
-        bback.setBounds(20, 380, 150, 30);
-        add(bback);
-        bback.addActionListener(this);
-
-        savechange = new JButton("Save Change");
-        savechange.setFont(new Font("Raleway", Font.BOLD, 12));
-        savechange.setBounds(410, 380, 150, 30);
-        add(savechange);
-        savechange.addActionListener(this);
-
-        del = new JButton("Delete Account");
-        del.setFont(new Font("Raleway", Font.BOLD, 12));
-        del.setBounds(220, 380, 150, 30);
-        add(del);
-        del.addActionListener(this);
-
     }
+    
 
     @Override
     public void actionPerformed(ActionEvent g) {
@@ -180,6 +217,10 @@ public class updatepage extends JFrame implements ActionListener {
                 System.out.println(f);
             }
         }
+    }
+
+    public static void main(String[] args) {
+        new updatepage("Rudra19");
     }
 
 }

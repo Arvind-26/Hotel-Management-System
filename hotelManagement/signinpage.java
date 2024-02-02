@@ -112,7 +112,7 @@ class signinpage extends JFrame {
         radio.add(other);
         
 
-        JLabel adss = new JLabel("Address");
+        JLabel adss = new JLabel("City");
         adss.setFont(new Font("Times", Font.BOLD, 13));
         adss.setBounds(200, 225, 150, 30);
         add(adss);
@@ -215,6 +215,8 @@ class signinpage extends JFrame {
                                 "Sign in Successfully", JOptionPane.PLAIN_MESSAGE);
                         dispose();
                         new homepage(nr);
+                        new profilepage(nr);
+                        
                     }
                 } catch (Exception c) {
                     JOptionPane.showMessageDialog(null, "Please Enter all the Filds Proerly, They all are Imortant.",
