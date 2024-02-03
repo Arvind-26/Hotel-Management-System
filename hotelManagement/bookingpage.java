@@ -17,7 +17,7 @@ public class bookingpage extends JFrame implements ActionListener {
     JButton bback, dane, book;
     int tot, rs;
     String ne;
-    Random id;
+    Random id, no;
 
     bookingpage(String bed, String nr) {
         super("Booking");
@@ -163,18 +163,22 @@ public class bookingpage extends JFrame implements ActionListener {
 
                 mysqlconnection my = new mysqlconnection();
                 id = new Random();
-                int idd = id.nextInt(999, 9999);
-                String iddd = "@#" + idd + "$#";
+                int idd = id.nextInt(100, 9999);
+                String iddd = "#" + idd ;
+
+                no = new Random();
+                int noo = no.nextInt(100, 999);
+                String nooo = "#" + noo;
 
                 try {
                     my.st.executeUpdate("create table " + ne
-                            + " (date varchar(15), day varchar(10), price int, bookingid varchar(15))");
+                            + " (date varchar(15), day varchar(10), price int, bookingid varchar(15), recipt_no varchar(10))");
 
                 } catch (Exception g) {
 
                 } finally {
                     my.st.executeUpdate("insert into " + ne + " values('" + date1 + "','" + selectedDuration + "',"
-                            + tot + ",'" + iddd + "')");
+                            + tot + ",'" + iddd + "','"+nooo+"')");
                 }
 
                 JOptionPane.showMessageDialog(null,

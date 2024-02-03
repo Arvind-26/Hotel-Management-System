@@ -25,11 +25,11 @@ public class recipt extends JFrame{
 
         mysqlconnection pr = new mysqlconnection();
         ResultSet rs;
-        String [] r = new String[4];
+        String [] r = new String[5];
         try{
             rs = pr.st.executeQuery("select * from "+ne+" where bookingid = '"+iddd+"' ");
             rs.next();
-            String [] e  = {"date","day","price","bookingid"};
+            String [] e  = {"date","day","price","bookingid","recipt_no"};
 
             for(int i= 0;i<e.length;i++){
                 r[i] = rs.getString(e[i]);
@@ -38,14 +38,13 @@ public class recipt extends JFrame{
             System.out.println(t);
         }
         
-        no = new Random();
-        int noo = no.nextInt(100, 199)+10;
+        
         JLabel head = new JLabel("Recipt");
         head.setFont(new Font("Raleway", Font.BOLD, 30));
         head.setBounds(10, 10, 200, 40);
         add(head);
 
-        JLabel tit = new JLabel("Recipt number :"+" "+"#"+noo);
+        JLabel tit = new JLabel("Recipt number :"+"  "+r[4]);
         tit.setFont(new Font("Raleway", Font.BOLD, 15));
         tit.setBounds(220, 90, 200, 40);
         add(tit);
