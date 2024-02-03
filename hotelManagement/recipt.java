@@ -2,6 +2,8 @@ package hotelManagement;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
@@ -10,18 +12,30 @@ import java.util.Random;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class recipt extends JFrame{
     Random no;
     JButton bback;
+    JPanel poutline;
 
     recipt(String nr, String id){
-        setSize(600, 500);
-        setLocation(400, 100); 
-        getContentPane().setBackground(Color.lightGray);
+        super("BEDZ");
+        setSize(800, 470);
+        setLocationRelativeTo(null); 
+        getContentPane().setBackground(new Color(225,95,31));
         setLayout(null);
         String ne = nr;
         String iddd = id;
+        
+        Image tr = Toolkit.getDefaultToolkit().getImage("package\\apk\\icons\\tringle.png");
+        setIconImage(tr);
+
+        poutline = new JPanel();
+        poutline.setBounds(200,50,400,300);
+        poutline.setBackground(Color.white);
+        poutline.setLayout(null);
+        add(poutline);
 
         mysqlconnection pr = new mysqlconnection();
         ResultSet rs;
@@ -46,52 +60,55 @@ public class recipt extends JFrame{
 
         JLabel tit = new JLabel("Recipt number :"+"  "+r[4]);
         tit.setFont(new Font("Raleway", Font.BOLD, 15));
-        tit.setBounds(220, 90, 200, 40);
-        add(tit);
+        tit.setBounds(125, 0, 200, 40);
+        poutline.add(tit);
         JLabel ine = new JLabel("----------------------------------------------------------------------------");
         ine.setFont(new Font("Raleway", Font.BOLD, 15));
-        ine.setBounds(100, 110, 500, 40);
-        add(ine);
+        ine.setBounds(10, 15, 500, 40);
+        poutline.add(ine);
 
         JLabel usr = new JLabel("User        : "+"          "+ne);
         usr.setFont(new Font("Raleway", Font.BOLD, 15));
-        usr.setBounds(220, 150, 1000, 40);
-        add(usr);
+        usr.setBounds(125, 50, 1000, 40);
+        poutline.add(usr);
 
         JLabel sir = new JLabel("Booking id        : "+"          "+iddd);
         sir.setFont(new Font("Raleway", Font.BOLD, 15));
-        sir.setBounds(178, 190, 250, 40);
-        add(sir);
+        sir.setBounds(83, 80, 250, 40);
+        poutline.add(sir);
 
         JLabel db = new JLabel("Date of booking        : "+"          "+r[0]);
         db.setFont(new Font("Raleway", Font.BOLD, 15));
-        db.setBounds(142, 230,300, 40);
-        add(db);
+        db.setBounds(47, 110,300, 40);
+        poutline.add(db);
 
         JLabel bc = new JLabel("Booking Days        : "+"          "+r[1]);
         bc.setFont(new Font("Raleway", Font.BOLD, 15));
-        bc.setBounds(157, 270,300, 40);
-        add(bc);
+        bc.setBounds(62, 140,300, 40);
+        poutline.add(bc);
 
         JLabel ine2 = new JLabel("----------------------------------------------------------------------------");
         ine2.setFont(new Font("Raleway", Font.BOLD, 15));
-        ine2.setBounds(100, 300, 500, 40);
-        add(ine2);
+        ine2.setBounds(10, 170, 500, 40);
+        poutline.add(ine2);
 
         JLabel pc = new JLabel("Price Payable        : "+"          ₹"+r[2]);
         pc.setFont(new Font("Raleway", Font.BOLD, 15));
-        pc.setBounds(157, 320,300, 40);
-        add(pc);
+        pc.setBounds(62, 200,300, 40);
+        poutline.add(pc);
 
         JLabel ine3 = new JLabel("----------------------------------------------------------------------------");
         ine3.setFont(new Font("Raleway", Font.BOLD, 15));
-        ine3.setBounds(100, 340, 500, 40);
-        add(ine3);
+        ine3.setBounds(10, 220, 500, 40);
+        poutline.add(ine3);
 
-        bback = new JButton("Conferm Booking");
-        bback.setFont(new Font("Raleway", Font.BOLD, 12));
-        bback.setBounds(220, 390, 150, 30);
-        add(bback);
+        bback = new JButton("Confarm Booking");
+        bback.setFont(new Font("Times", Font.PLAIN, 13));
+        bback.setBackground(new Color(225,95,31));
+        bback.setForeground(Color.WHITE);
+        bback.setBorderPainted(false);
+        bback.setBounds(125, 255, 140, 35); 
+        poutline.add(bback);
         bback.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -112,5 +129,8 @@ public class recipt extends JFrame{
 
    
 
+    public static void main(String[] args) {
+        new recipt("AR26", "#4803");
+    }
     
 }

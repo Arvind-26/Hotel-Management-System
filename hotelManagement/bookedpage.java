@@ -75,13 +75,13 @@ public class bookedpage extends JFrame implements ActionListener{
         sp.setPreferredSize(new Dimension(820, 310)); 
         p1.add(sp); 
 
-        JLabel udown = new JLabel("Enter bookingId to downlaod: ");
+        JLabel udown = new JLabel("Enter booking Id to downlaod: ");
         udown.setFont(new Font("Times", Font.BOLD, 13));
-        udown.setBounds(400, 380, 250, 30);
+        udown.setBounds(400, 385, 250, 30);
         add(udown);
         down = new JTextField(2);
         down.setFont(new Font("Times", Font.PLAIN, 17));
-        down.setBounds(600, 380, 100, 30);
+        down.setBounds(595, 385, 100, 30);
         add(down);
 
 

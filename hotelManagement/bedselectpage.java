@@ -22,7 +22,6 @@ public class bedselectpage extends JFrame implements ActionListener{
         ne = nr;
         setSize(850, 478);
         setLocationRelativeTo(null);
-        getContentPane().setBackground(Color.lightGray);
         setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         getContentPane().setBackground(new Color(225,95,31));
