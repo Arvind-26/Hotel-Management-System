@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import javax.swing.plaf.FontUIResource;
 
 class signinpage extends JFrame {
 
@@ -24,7 +25,7 @@ class signinpage extends JFrame {
     JPanel sidepan;
     JPasswordField password;
     JRadioButton male, female, other;
-    JButton signin;
+    JButton signin, blogin;
     Random r;
     String ggg, nr;
 
@@ -159,7 +160,22 @@ class signinpage extends JFrame {
         password = new JPasswordField(10);
         password.setFont(new Font("Times", Font.PLAIN, 17));
         password.setBounds(320, 385, 200, 30);
-        add(password); 
+        add(password);
+        blogin = new JButton("Login");
+        blogin.setBounds(40, 370, 110, 35);
+        blogin.setBackground(new Color(225,95,31));
+        blogin.setForeground(Color.WHITE);
+        blogin.setFont(new FontUIResource("Times", Font.PLAIN, 15));
+        blogin.setBorderPainted(false);
+        bgg3.add(blogin);
+        blogin.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new loginPage();
+            }
+            
+        });
         
 
         r = new Random();
@@ -215,7 +231,6 @@ class signinpage extends JFrame {
                                 "Sign in Successfully", JOptionPane.PLAIN_MESSAGE);
                         dispose();
                         new homepage(nr);
-                        new profilepage(nr);
                         
                     }
                 } catch (Exception c) {

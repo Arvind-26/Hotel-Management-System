@@ -117,7 +117,7 @@ public class bookedpage extends JFrame implements ActionListener{
             Random filename = new Random();
             int rr = filename.nextInt(100000, 999999);
             String a = String.format("%d",rr);
-            File file = new File("Hotel-Management-System/icons/"+a+".txt");
+            File file = new File("package/rcp/"+a+".txt");
             String downn = down.getText();
             String [] r = new String[5];
             try {
