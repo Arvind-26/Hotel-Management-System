@@ -129,9 +129,5 @@ public class recipt extends JFrame{
     }
 
    
-
-    public static void main(String[] args) {
-        new recipt("AR26", "#4803");
-    }
     
 }

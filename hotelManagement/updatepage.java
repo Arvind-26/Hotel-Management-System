@@ -219,8 +219,5 @@ public class updatepage extends JFrame implements ActionListener {
         }
     }
 
-    public static void main(String[] args) {
-        new updatepage("Rudra19");
-    }
 
 }

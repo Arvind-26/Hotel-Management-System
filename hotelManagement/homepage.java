@@ -91,6 +91,7 @@ public class homepage extends JFrame implements ActionListener {
         abt.setFont(new FontUIResource("Times", Font.BOLD, 15));
         abt.setBorderPainted(false);
         bgg3.add(abt);
+        abt.addActionListener(this);
 
         JLabel wel = new JLabel("WELCOME TO BEDZ");
         wel.setBounds(50,30,600,200);
@@ -130,10 +131,8 @@ public class homepage extends JFrame implements ActionListener {
             new profilepage(ne);
         }else if(e.getSource()==abt){
             dispose();
+            new aboutus(ne);
         }
-    }
-    public static void main(String[] args) {
-        new homepage("Rudra39");
     }
     
 }
