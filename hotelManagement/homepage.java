@@ -20,7 +20,7 @@ import javax.swing.plaf.FontUIResource;
 public class homepage extends JFrame implements ActionListener {
 
 
-    JButton btn1, btn2, btn3, back;
+    JButton btn1, btn2, btn3, back,abt;
     JPanel sidepan;
     String ne;
     homepage(String nr){
@@ -84,6 +84,14 @@ public class homepage extends JFrame implements ActionListener {
         bgg3.add(btn3);
         btn3.addActionListener(this);
 
+        abt = new JButton("About Us");
+        abt.setBounds(40, 360, 120, 35);
+        abt.setBackground(Color.white);
+        abt.setForeground(new Color(225,95,31));
+        abt.setFont(new FontUIResource("Times", Font.BOLD, 15));
+        abt.setBorderPainted(false);
+        bgg3.add(abt);
+
         JLabel wel = new JLabel("WELCOME TO BEDZ");
         wel.setBounds(50,30,600,200);
         wel.setFont(new FontUIResource(Font.SERIF, Font.BOLD, 50));
@@ -120,7 +128,12 @@ public class homepage extends JFrame implements ActionListener {
         else if(e.getSource()==btn3){
             dispose();
             new profilepage(ne);
+        }else if(e.getSource()==abt){
+            dispose();
         }
+    }
+    public static void main(String[] args) {
+        new homepage("Rudra39");
     }
     
 }

@@ -14,7 +14,4 @@ public class mysqlconnection {
             System.out.println(e);
         }
     }
-    public static void main(String[] args) {
-        new mysqlconnection();
-    }
 }

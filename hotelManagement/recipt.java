@@ -55,6 +55,7 @@ public class recipt extends JFrame{
         
         JLabel head = new JLabel("Recipt");
         head.setFont(new Font("Raleway", Font.BOLD, 30));
+        head.setForeground(Color.white);
         head.setBounds(10, 10, 200, 40);
         add(head);
 
@@ -102,7 +103,7 @@ public class recipt extends JFrame{
         ine3.setBounds(10, 220, 500, 40);
         poutline.add(ine3);
 
-        bback = new JButton("Confarm Booking");
+        bback = new JButton("Done");
         bback.setFont(new Font("Times", Font.PLAIN, 13));
         bback.setBackground(new Color(225,95,31));
         bback.setForeground(Color.WHITE);
