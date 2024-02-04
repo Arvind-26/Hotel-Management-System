@@ -23,17 +23,17 @@ class loginPage extends JFrame implements ActionListener  {
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     getContentPane().setBackground(Color.WHITE);
 
-    Image tr = Toolkit.getDefaultToolkit().getImage("package\\apk\\icons\\tringle.png");
+    Image tr = Toolkit.getDefaultToolkit().getImage("icons\\tringle.png");
     setIconImage(tr);
 
 
     psign = new JPanel();
     psign.setBounds(425, 0, 425, 478);
-    psign.setBackground(new Color(225,95,31));
+    psign.setBackground(new Color(210, 4, 45));
     psign.setLayout(null);
     add(psign);
 
-    ImageIcon logo = new ImageIcon("package\\apk\\icons\\Logo.png");
+    ImageIcon logo = new ImageIcon("icons\\Logo.png");
     Image logo1 = logo.getImage().getScaledInstance(300, 200,Image.SCALE_DEFAULT);
     JLabel logolab = new JLabel(new ImageIcon(logo1));
     logolab.setBounds(0,50,400,200);
@@ -48,7 +48,7 @@ class loginPage extends JFrame implements ActionListener  {
 
     ltitle = new JLabel("LOGIN");
     ltitle.setFont(new Font("Times", Font.BOLD, 38));
-    ltitle.setForeground(new Color(225,95,31));
+    ltitle.setForeground(new Color(210, 4, 45));
     ltitle.setBounds(150, 40, 140, 40);
     plogin.add(ltitle);
 
@@ -74,7 +74,7 @@ class loginPage extends JFrame implements ActionListener  {
 
     blogin = new JButton("Login");
     blogin.setBounds(156, 343, 110, 35);
-    blogin.setBackground(new Color(225,95,31));
+    blogin.setBackground(new Color(210, 4, 45));
     blogin.setForeground(Color.WHITE);
     blogin.setFont(new FontUIResource("Times", Font.PLAIN, 15));
     blogin.setBorderPainted(false);
@@ -90,7 +90,7 @@ class loginPage extends JFrame implements ActionListener  {
     bsignin = new JButton("Sign in");
     bsignin.setBounds(156, 343, 110, 35);
     bsignin.setBackground(Color.white);
-    bsignin.setForeground(new Color(225,95,31));
+    bsignin.setForeground(new Color(210, 4, 45));
     bsignin.setFont(new FontUIResource("Times", Font.PLAIN, 15));
     bsignin.setBorderPainted(false);
     psign.add(bsignin);

@@ -36,15 +36,16 @@ class signinpage extends JFrame {
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.WHITE);
 
-        Image tr = Toolkit.getDefaultToolkit().getImage("package\\apk\\icons\\tringle.png");
+        Image tr = Toolkit.getDefaultToolkit().getImage("icons\\tringle.png");
         setIconImage(tr);
 
         sidepan = new JPanel();
         sidepan.setBounds(0, 0, 180, 478);
-        ImageIcon bgg = new ImageIcon("package\\apk\\icons\\bgg.png");
-        Image bgg2 = bgg.getImage().getScaledInstance(180,478, Image.SCALE_DEFAULT);
+        sidepan.setBackground(new Color(210, 4, 45));
+        ImageIcon bgg = new ImageIcon("icons\\logo2.png");
+        Image bgg2 = bgg.getImage().getScaledInstance(250,350, Image.SCALE_DEFAULT);
         JLabel bgg3 = new JLabel(new ImageIcon(bgg2));
-        bgg3.setBounds(0,0,180,478);
+        bgg3.setBounds(-70,40,300,300);
         sidepan.add(bgg3);
         sidepan.setLayout(null);
         add(sidepan);
@@ -53,7 +54,7 @@ class signinpage extends JFrame {
         JLabel head = new JLabel("SIGN IN");
         head.setFont(new Font("Times", Font.BOLD, 38));
         head.setBounds(200, 10, 200, 40);
-        head.setForeground(new Color(225,95,31));
+        head.setForeground(new Color(210, 4, 45));
         add(head);
        
 
@@ -162,16 +163,17 @@ class signinpage extends JFrame {
         password.setBounds(320, 385, 200, 30);
         add(password);
         blogin = new JButton("Login");
-        blogin.setBounds(40, 370, 110, 35);
-        blogin.setBackground(new Color(225,95,31));
-        blogin.setForeground(Color.WHITE);
+        blogin.setBounds(35, 370, 110, 35);
+        blogin.setBackground(Color.white);
+        blogin.setForeground(new Color(210, 4, 45));
         blogin.setFont(new FontUIResource("Times", Font.PLAIN, 15));
         blogin.setBorderPainted(false);
-        bgg3.add(blogin);
+        sidepan.add(blogin);
         blogin.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                dispose();
                 new loginPage();
             }
             
@@ -183,7 +185,7 @@ class signinpage extends JFrame {
 
         signin = new JButton("Create Account");
         signin.setFont(new Font("Times", Font.PLAIN, 15));
-        signin.setBackground(new Color(225,95,31));
+        signin.setBackground(new Color(210, 4, 45));
         signin.setForeground(Color.WHITE);
         signin.setBorderPainted(false);
         signin.setBounds(650, 383, 150, 35);

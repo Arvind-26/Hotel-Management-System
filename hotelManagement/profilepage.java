@@ -39,35 +39,32 @@ public class profilepage extends JFrame implements ActionListener{
         setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        Image tr = Toolkit.getDefaultToolkit().getImage("package\\apk\\icons\\tringle.png");
+        Image tr = Toolkit.getDefaultToolkit().getImage("icons\\tringle.png");
         setIconImage(tr);
 
         sidepan = new JPanel();
         sidepan.setBounds(0, 0, 180, 478);
-        ImageIcon bgg = new ImageIcon("package\\apk\\icons\\bgg.png");
-        Image bgg2 = bgg.getImage().getScaledInstance(200,478, Image.SCALE_DEFAULT);
-        JLabel bgg3 = new JLabel(new ImageIcon(bgg2));
-        bgg3.setBounds(0,0,200,478);
-        sidepan.add(bgg3);
+        sidepan.setBounds(0,0,180,478);
+        sidepan.setBackground(new Color(210, 4, 45));;
         sidepan.setLayout(null);
         add(sidepan);
 
 
         
-        ImageIcon pro = new ImageIcon("package\\apk\\icons\\Male.png");
+        ImageIcon pro = new ImageIcon("icons\\Male.png");
         Image pro2 = pro.getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT);
 
-        ImageIcon pro1 = new ImageIcon("package\\apk\\icons\\female.png");
+        ImageIcon pro1 = new ImageIcon("icons\\female.png");
         Image pro21 = pro1.getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT);
         
         if(w[3].equals("Male")){
             JLabel pro3 = new JLabel(new ImageIcon(pro2));
             pro3.setBounds(40,30,100,100);
-            bgg3.add(pro3);
+            sidepan.add(pro3);
         }else if(w[3].equals("Female")){
             JLabel pro3 = new JLabel(new ImageIcon(pro21));
             pro3.setBounds(40,30,100,100);
-            bgg3.add(pro3);
+            sidepan.add(pro3);
         }
 
         
@@ -77,12 +74,12 @@ public class profilepage extends JFrame implements ActionListener{
         head1.setFont(new Font("", Font.BOLD, 32));
         head1.setBounds(40, 150, 300, 40);
         head1.setForeground(Color.WHITE);
-        bgg3.add(head1);
+        sidepan.add(head1);
 
         JLabel head = new JLabel("INFORMATION");
         head.setFont(new Font("Times", Font.BOLD, 30));
         head.setBounds(200, 10, 300, 40);
-        head.setForeground(new Color(225,95,31));
+        head.setForeground(new Color(210, 4, 45));
         add(head);
 
         JLabel i1 = new JLabel("Name");
@@ -179,17 +176,17 @@ public class profilepage extends JFrame implements ActionListener{
 
         bback = new JButton("Back");
         bback.setFont(new Font("Times", Font.PLAIN, 15));
-        bback.setBackground(new Color(225,95,31));
-        bback.setForeground(Color.WHITE);
+        bback.setBackground(Color.white);
+        bback.setForeground(new Color(210, 4, 45));
         bback.setBorderPainted(false);
         bback.setBounds(25, 370, 125, 35);
-        bgg3.add(bback); 
+        sidepan.add(bback); 
         bback.addActionListener(this);
 
         
         bupdate = new JButton("Update");
         bupdate.setFont(new Font("Times", Font.PLAIN, 15));
-        bupdate.setBackground(new Color(225,95,31));
+        bupdate.setBackground(new Color(210, 4, 45));
         bupdate.setForeground(Color.WHITE);
         bupdate.setBorderPainted(false);
         bupdate.setBounds(600, 370, 125, 35);

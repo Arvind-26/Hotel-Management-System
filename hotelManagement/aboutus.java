@@ -23,50 +23,47 @@ public class aboutus extends JFrame implements ActionListener{
     String a,b,c,d,f,g,ne;
     public aboutus(String nr){
         super("BEDZ");
-        nr = ne;
+        ne = nr;
         setSize(800, 470);
         setLocationRelativeTo(null); 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
     
-        Image tr = Toolkit.getDefaultToolkit().getImage("package\\apk\\icons\\tringle.png");
+        Image tr = Toolkit.getDefaultToolkit().getImage("icons\\tringle.png");
         setIconImage(tr);
 
         sidepan = new JPanel();
         sidepan.setBounds(0, 0, 180, 478);
-        ImageIcon bgg = new ImageIcon("package\\apk\\icons\\bgg.png");
-        Image bgg2 = bgg.getImage().getScaledInstance(180,478, Image.SCALE_DEFAULT);
-        JLabel bgg3 = new JLabel(new ImageIcon(bgg2));
-        bgg3.setBounds(0,0,180,478);
-        sidepan.add(bgg3);
+        sidepan.setBounds(0,0,180,478);
+        sidepan.setBackground(new Color(210, 4, 45));;
         sidepan.setLayout(null);
         add(sidepan);
 
         babt = new JButton("About Us");
         babt.setBounds(25,25,135,30);
-        babt.setForeground(Color.GRAY);
+        babt.setForeground(Color.white);
         babt.setContentAreaFilled(false);
         babt.setBorderPainted(false);
         babt.setOpaque(false);
-        bgg3.add(babt);
+        sidepan.add(babt);
         babt.addActionListener(this);
 
         String v = "<html>Terms & Conditions</html>";
         btc = new JButton(v);
         btc.setBounds(25,70,135,30);
-        btc.setForeground(Color.GRAY);
+        btc.setForeground(Color.white);
         btc.setContentAreaFilled(false);
         btc.setBorderPainted(false);
-        bgg3.add(btc);
+        sidepan.add(btc);
         btc.addActionListener(this);
 
         bpp = new JButton("Privacy Policy");
         bpp.setBounds(25,120,135,30);
-        bpp.setForeground(Color.GRAY);
+        bpp.setForeground(Color.white);
         bpp.setContentAreaFilled(false);
         bpp.setBorderPainted(false);
-        bgg3.add(bpp);
+        sidepan.add(bpp);
         bpp.addActionListener(this);
 
         d = "About Us";
@@ -100,11 +97,11 @@ public class aboutus extends JFrame implements ActionListener{
 
         bback = new JButton("Back");
         bback.setFont(new Font("Times", Font.PLAIN, 15));
-        bback.setBackground(new Color(225,95,31));
-        bback.setForeground(Color.WHITE);
+        bback.setBackground(Color.white);
+        bback.setForeground(new Color(210, 4, 45));
         bback.setBorderPainted(false);
         bback.setBounds(25, 370, 125, 35);
-        bgg3.add(bback); 
+        sidepan.add(bback); 
         bback.addActionListener(this);
         setResizable(false);
         setVisible(true);

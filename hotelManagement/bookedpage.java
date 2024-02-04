@@ -39,12 +39,12 @@ public class bookedpage extends JFrame implements ActionListener{
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.white);
         setLayout(null);
-        Image tr = Toolkit.getDefaultToolkit().getImage("package\\apk\\icons\\tringle.png");
+        Image tr = Toolkit.getDefaultToolkit().getImage("icons\\tringle.png");
         setIconImage(tr);
 
         JLabel head = new JLabel("Booked History");
         head.setFont(new Font("Raleway", Font.BOLD, 30));
-        head.setForeground(new Color(225,95,31));
+        head.setForeground(new Color(210, 4, 45));
         head.setBounds(10, 10, 250, 40);
         add(head);
 
@@ -87,7 +87,7 @@ public class bookedpage extends JFrame implements ActionListener{
 
         bdown = new JButton("Download");
         bdown.setFont(new Font("Times", Font.PLAIN, 15));
-        bdown.setBackground(new Color(225,95,31));
+        bdown.setBackground(new Color(210, 4, 45));
         bdown.setForeground(Color.WHITE);
         bdown.setBorderPainted(false);
         bdown.setBounds(700, 380, 125, 35);
@@ -96,7 +96,7 @@ public class bookedpage extends JFrame implements ActionListener{
 
         bback = new JButton("Back");
         bback.setFont(new Font("Times", Font.PLAIN, 15));
-        bback.setBackground(new Color(225,95,31));
+        bback.setBackground(new Color(210, 4, 45));
         bback.setForeground(Color.WHITE);
         bback.setBorderPainted(false);
         bback.setBounds(25, 380, 125, 35);
@@ -117,7 +117,7 @@ public class bookedpage extends JFrame implements ActionListener{
             Random filename = new Random();
             int rr = filename.nextInt(100000, 999999);
             String a = String.format("%d",rr);
-            File file = new File("package/rcp/"+a+".txt");
+            File file = new File("recipt/"+a+".txt");
             String downn = down.getText();
             String [] r = new String[5];
             try {

@@ -23,12 +23,12 @@ public class recipt extends JFrame{
         super("BEDZ");
         setSize(800, 470);
         setLocationRelativeTo(null); 
-        getContentPane().setBackground(new Color(225,95,31));
+        getContentPane().setBackground(new Color(210, 4, 45));
         setLayout(null);
         String ne = nr;
         String iddd = id;
         
-        Image tr = Toolkit.getDefaultToolkit().getImage("package\\apk\\icons\\tringle.png");
+        Image tr = Toolkit.getDefaultToolkit().getImage("icons\\tringle.png");
         setIconImage(tr);
 
         poutline = new JPanel();
@@ -105,7 +105,7 @@ public class recipt extends JFrame{
 
         bback = new JButton("Done");
         bback.setFont(new Font("Times", Font.PLAIN, 13));
-        bback.setBackground(new Color(225,95,31));
+        bback.setBackground(new Color(210, 4, 45));
         bback.setForeground(Color.WHITE);
         bback.setBorderPainted(false);
         bback.setBounds(125, 255, 140, 35); 

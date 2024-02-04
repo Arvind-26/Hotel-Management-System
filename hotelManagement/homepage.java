@@ -30,10 +30,10 @@ public class homepage extends JFrame implements ActionListener {
         setLocationRelativeTo(null); 
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
-        Image tr = Toolkit.getDefaultToolkit().getImage("package\\apk\\icons\\tringle.png");
+        Image tr = Toolkit.getDefaultToolkit().getImage("icons\\tringle.png");
         setIconImage(tr);
 
-        ImageIcon bggrg = new ImageIcon("package\\apk\\icons\\hbg.jpg");
+        ImageIcon bggrg = new ImageIcon("icons\\hbg.jpg");
         Image bggrgh = bggrg.getImage().getScaledInstance(620,478, Image.SCALE_DEFAULT);
         JLabel bgrgg3 = new JLabel(new ImageIcon(bggrgh));
         bgrgg3.setBounds(180,0,620,478);
@@ -46,11 +46,8 @@ public class homepage extends JFrame implements ActionListener {
         
         sidepan = new JPanel();
         sidepan.setBounds(0, 0, 180, 478);
-        ImageIcon bgg = new ImageIcon("package\\apk\\icons\\bgg.png");
-        Image bgg2 = bgg.getImage().getScaledInstance(180,478, Image.SCALE_DEFAULT);
-        JLabel bgg3 = new JLabel(new ImageIcon(bgg2));
-        bgg3.setBounds(0,0,180,478);
-        sidepan.add(bgg3);
+        sidepan.setBounds(0,0,180,478);
+        sidepan.setBackground(new Color(210, 4, 45));
         sidepan.setLayout(null);
         add(sidepan);
 
@@ -59,38 +56,38 @@ public class homepage extends JFrame implements ActionListener {
 
         btn1.setBounds(40, 20, 120, 35);
         btn1.setBackground(Color.white);
-        btn1.setForeground(new Color(225,95,31));
+        btn1.setForeground(new Color(210, 4, 45));
         btn1.setFont(new FontUIResource("Times", Font.BOLD, 15));
         btn1.setBorderPainted(false);
-        bgg3.add(btn1);
+        sidepan.add(btn1);
         btn1.addActionListener(this);
 
         
         btn2 = new JButton("Booked List");
         btn2.setBounds(40, 100, 120, 35);
         btn2.setBackground(Color.WHITE);
-        btn2.setForeground(new Color(225,95,31));
+        btn2.setForeground(new Color(210, 4, 45));
         btn2.setFont(new FontUIResource("Times", Font.BOLD, 15));
         btn2.setBorderPainted(false);
-        bgg3.add(btn2);
+        sidepan.add(btn2);
         btn2.addActionListener(this);
 
         btn3 = new JButton("Profile");
         btn3.setBounds(40, 180, 120, 35);
         btn3.setBackground(Color.WHITE);
-        btn3.setForeground(new Color(225,95,31));
+        btn3.setForeground(new Color(210, 4, 45));
         btn3.setFont(new FontUIResource("Times", Font.BOLD, 15));
         btn3.setBorderPainted(false);
-        bgg3.add(btn3);
+        sidepan.add(btn3);
         btn3.addActionListener(this);
 
         abt = new JButton("About Us");
         abt.setBounds(40, 360, 120, 35);
         abt.setBackground(Color.white);
-        abt.setForeground(new Color(225,95,31));
+        abt.setForeground(new Color(210, 4, 45));
         abt.setFont(new FontUIResource("Times", Font.BOLD, 15));
         abt.setBorderPainted(false);
-        bgg3.add(abt);
+        sidepan.add(abt);
         abt.addActionListener(this);
 
         JLabel wel = new JLabel("WELCOME TO BEDZ");

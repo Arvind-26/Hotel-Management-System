@@ -29,23 +29,20 @@ public class bookingpage extends JFrame implements ActionListener {
         setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        Image tr = Toolkit.getDefaultToolkit().getImage("package\\apk\\icons\\tringle.png");
+        Image tr = Toolkit.getDefaultToolkit().getImage("icons\\tringle.png");
         setIconImage(tr);
 
         sidepan = new JPanel();
         sidepan.setBounds(0, 0, 180, 478);
-        ImageIcon bgg = new ImageIcon("package\\apk\\icons\\bgg.png");
-        Image bgg2 = bgg.getImage().getScaledInstance(180,478, Image.SCALE_DEFAULT);
-        JLabel bgg3 = new JLabel(new ImageIcon(bgg2));
-        bgg3.setBounds(0,0,180,478);
-        sidepan.add(bgg3);
+        sidepan.setBounds(0,0,180,478);
+        sidepan.setBackground(new Color(210, 4, 45));;
         sidepan.setLayout(null);
         add(sidepan);
 
         head = new JLabel("Book Your Room");
         head.setFont(new Font("Raleway", Font.BOLD, 30));
         head.setBounds(200, 10, 300, 40);
-        head.setForeground(new Color(225,95,31));
+        head.setForeground(new Color(210, 4, 45));
         add(head);
 
         if (bed.equals("single")) {
@@ -103,16 +100,16 @@ public class bookingpage extends JFrame implements ActionListener {
 
         bback = new JButton("Back");
         bback.setFont(new Font("Times", Font.PLAIN, 15));
-        bback.setBackground(new Color(225,95,31));
-        bback.setForeground(Color.WHITE);
+        bback.setBackground(Color.white);
+        bback.setForeground(new Color(210, 4, 45));
         bback.setBorderPainted(false);
         bback.setBounds(25, 370, 125, 35);
-        bgg3.add(bback); 
+        sidepan.add(bback); 
         bback.addActionListener(this);
 
         dane = new JButton("Done");
         dane.setFont(new Font("Times", Font.PLAIN, 15));
-        dane.setBackground(new Color(225,95,31));
+        dane.setBackground(new Color(210, 4, 45));
         dane.setForeground(Color.WHITE);
         dane.setBorderPainted(false);
         dane.setBounds(400, 250, 125, 35);
@@ -132,7 +129,7 @@ public class bookingpage extends JFrame implements ActionListener {
 
         book = new JButton("Confirm Booking");
         book.setFont(new Font("Times", Font.PLAIN, 13));
-        book.setBackground(new Color(225,95,31));
+        book.setBackground(new Color(210, 4, 45));
         book.setForeground(Color.WHITE);
         book.setBorderPainted(false);
         book.setBounds(610, 335, 140, 35); 

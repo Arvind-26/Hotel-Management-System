@@ -13,6 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -49,25 +50,37 @@ public class updatepage extends JFrame implements ActionListener {
             System.out.println(a);
         }
 
-        Image tr = Toolkit.getDefaultToolkit().getImage("package\\apk\\icons\\tringle.png");
+        Image tr = Toolkit.getDefaultToolkit().getImage("icons\\tringle.png");
         setIconImage(tr);
 
         sidepan = new JPanel();
         sidepan.setBounds(0, 0, 180, 478);
-        ImageIcon bgg = new ImageIcon("package\\apk\\icons\\bgg.png");
-        Image bgg2 = bgg.getImage().getScaledInstance(200,478, Image.SCALE_DEFAULT);
-        JLabel bgg3 = new JLabel(new ImageIcon(bgg2));
-        bgg3.setBounds(0,0,200,478);
-        sidepan.add(bgg3);
+        sidepan.setBackground(new Color(210, 4, 45));
         sidepan.setLayout(null);
         add(sidepan);
+
+        ImageIcon pro = new ImageIcon("icons\\Male.png");
+        Image pro2 = pro.getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT);
+
+        ImageIcon pro1 = new ImageIcon("icons\\female.png");
+        Image pro21 = pro1.getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT);
+        
+        if(w[3].equals("Male")){
+            JLabel pro3 = new JLabel(new ImageIcon(pro2));
+            pro3.setBounds(40,30,100,100);
+            sidepan.add(pro3);
+        }else if(w[3].equals("Female")){
+            JLabel pro3 = new JLabel(new ImageIcon(pro21));
+            pro3.setBounds(40,30,100,100);
+            sidepan.add(pro3);
+        }
 
        
 
         JLabel head = new JLabel("UPDATE INFORMATION");
         head.setFont(new Font("Times", Font.BOLD, 30));
         head.setBounds(200, 10, 400, 40);
-        head.setForeground(new Color(225,95,31));
+        head.setForeground(new Color(210, 4, 45));
         add(head);
         
 
@@ -148,16 +161,16 @@ public class updatepage extends JFrame implements ActionListener {
        bback = new JButton("Back");
         bback.setFont(new Font("Times", Font.PLAIN, 15));
         bback.setBackground(Color.WHITE);
-        bback.setForeground(new Color(225,95,31));
+        bback.setForeground(new Color(210, 4, 45));
         bback.setBorderPainted(false);
         bback.setBounds(25, 370, 125, 35);
-        bgg3.add(bback); 
+        sidepan.add(bback); 
         bback.addActionListener(this);
         
 
         savechange = new JButton("Save Change");
         savechange.setFont(new Font("Times", Font.PLAIN, 15));
-        savechange.setBackground(new Color(225,95,31));
+        savechange.setBackground(new Color(210, 4, 45));
         savechange.setForeground(Color.WHITE);
         savechange.setBorderPainted(false);
         savechange.setBounds(620, 390, 125, 35);
@@ -167,7 +180,7 @@ public class updatepage extends JFrame implements ActionListener {
 
         del = new JButton("Delete Acount");
         del.setFont(new Font("Times", Font.PLAIN, 15));
-        del.setBackground(new Color(225,95,31));
+        del.setBackground(new Color(210, 4, 45));
         del.setForeground(Color.WHITE);
         del.setBorderPainted(false);
         del.setBounds(200, 390, 125, 35);
@@ -206,6 +219,7 @@ public class updatepage extends JFrame implements ActionListener {
             mysqlconnection ch = new mysqlconnection();
             try {
                 ch.st.executeUpdate("delete from users where username = '" + ne + "'");
+                
                 try {
                     ch.st.executeUpdate("drop table " + ne + "");
                 } catch (Exception d) {
@@ -213,6 +227,7 @@ public class updatepage extends JFrame implements ActionListener {
                 }
                 dispose();
                 new loginPage();
+                JOptionPane.showMessageDialog(null,"Account Deleted Successfully","Message",JOptionPane.PLAIN_MESSAGE);
             } catch (Exception f) {
                 System.out.println(f);
             }
