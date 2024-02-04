@@ -8,11 +8,13 @@ public class mysqlconnection {
 
     public mysqlconnection() {
         try {
-            Connection con = DriverManager.getConnection("jdbc:mysql://jdbc:mysql://localhost:3306/hotelmanagement", "root","Rudra@mysql123");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotelmanagement", "root","root123");
             st = con.createStatement();
         } catch (Exception e) {
             System.out.println(e);
         }
     }
-
+    public static void main(String[] args) {
+        new mysqlconnection();
+    }
 }

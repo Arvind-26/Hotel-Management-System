@@ -208,8 +208,7 @@ class signinpage extends JFrame {
                         nr = n1 + rr;
 
                         mysqlconnection data = new mysqlconnection();
-                        data.st.executeUpdate(
-                                "insert into users values('" + nr + "','" + pass2 + "','" + n1 +"','" + n2 + "'," + a1 + ",'" + ggg + "','" + add1 + "','" + c1 + "','" + m1+ "'," + ph1+ ")");
+                        data.st.executeUpdate("insert into users values('" + nr + "','" + pass2 + "','" + n1 +"','" + n2 + "'," + a1 + ",'" + ggg + "','" + add1 + "','" + c1 + "','" + m1+ "'," + ph1+ ")");
 
                         JOptionPane.showMessageDialog(null, "Username : " + nr + "\n Password : " + pass2,
                                 "Sign in Successfully", JOptionPane.PLAIN_MESSAGE);

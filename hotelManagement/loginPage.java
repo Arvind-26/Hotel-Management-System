@@ -107,8 +107,7 @@ class loginPage extends JFrame implements ActionListener  {
         char[] password = ppass.getPassword();
         String password1 = new String(password);
         mysqlconnection con = new mysqlconnection();
-        ResultSet rs = con.st
-            .executeQuery("select * from users where username='" + username + "' and password='" + password1 + "'");
+        ResultSet rs = con.st.executeQuery("select * from users where username='" + username + "' and password='" + password1 + "'");
         rs.next();
         try {
           if (rs.getString("username").equals(username) && rs.getString("password").equals(password1)) {
