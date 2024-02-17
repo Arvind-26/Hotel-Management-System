@@ -30,10 +30,10 @@ public class homepage extends JFrame implements ActionListener {
         setLocationRelativeTo(null); 
         getContentPane().setBackground(Color.WHITE);
         setLayout(null);
-        Image tr = Toolkit.getDefaultToolkit().getImage("icons\\tringle.png");
+        Image tr = Toolkit.getDefaultToolkit().getImage("Hotel-Management-System\\icons\\tringle.png");
         setIconImage(tr);
 
-        ImageIcon bggrg = new ImageIcon("icons\\hbg.jpg");
+        ImageIcon bggrg = new ImageIcon("Hotel-Management-System\\icons\\hbg.jpg");
         Image bggrgh = bggrg.getImage().getScaledInstance(620,478, Image.SCALE_DEFAULT);
         JLabel bgrgg3 = new JLabel(new ImageIcon(bggrgh));
         bgrgg3.setBounds(180,0,620,478);
@@ -52,7 +52,7 @@ public class homepage extends JFrame implements ActionListener {
         add(sidepan);
 
 
-        btn1 = new JButton("Boolking");
+        btn1 = new JButton("Booking");
 
         btn1.setBounds(40, 20, 120, 35);
         btn1.setBackground(Color.white);
@@ -131,5 +131,6 @@ public class homepage extends JFrame implements ActionListener {
             new aboutus(ne);
         }
     }
+    
     
 }

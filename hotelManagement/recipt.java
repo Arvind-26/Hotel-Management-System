@@ -28,7 +28,7 @@ public class recipt extends JFrame{
         String ne = nr;
         String iddd = id;
         
-        Image tr = Toolkit.getDefaultToolkit().getImage("icons\\tringle.png");
+        Image tr = Toolkit.getDefaultToolkit().getImage("Hotel-Management-System\\icons\\tringle.png");
         setIconImage(tr);
 
         poutline = new JPanel();
@@ -115,7 +115,7 @@ public class recipt extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 if(e.getSource().equals(bback)){
                     dispose();
-                    new bookedpage(nr);
+                    new bookedpage(ne);
                 }
             }
             

@@ -39,7 +39,7 @@ public class bookedpage extends JFrame implements ActionListener{
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.white);
         setLayout(null);
-        Image tr = Toolkit.getDefaultToolkit().getImage("icons\\tringle.png");
+        Image tr = Toolkit.getDefaultToolkit().getImage("Hotel-Management-System\\icons\\tringle.png");
         setIconImage(tr);
 
         JLabel head = new JLabel("Booked History");

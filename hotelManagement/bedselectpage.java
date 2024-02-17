@@ -26,7 +26,7 @@ public class bedselectpage extends JFrame implements ActionListener{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         getContentPane().setBackground(new Color(210, 4, 45));
 
-        Image tr = Toolkit.getDefaultToolkit().getImage("icons\\tringle.png");
+        Image tr = Toolkit.getDefaultToolkit().getImage("Hotel-Management-System\\icons\\tringle.png");
         setIconImage(tr);
 
         ps = new JPanel();
@@ -41,7 +41,7 @@ public class bedselectpage extends JFrame implements ActionListener{
         head.setForeground(Color.white);
         add(head);
 
-        ImageIcon img1 = new ImageIcon("icons\\singlebed.jpg");
+        ImageIcon img1 = new ImageIcon("Hotel-Management-System\\icons\\singlebed.jpg");
         Image scaledImage1 = img1.getImage().getScaledInstance(230, 230, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon1 = new ImageIcon(scaledImage1);
 
@@ -71,7 +71,7 @@ public class bedselectpage extends JFrame implements ActionListener{
         pd.setLayout(null);
         add(pd);
 
-        ImageIcon img2 = new ImageIcon("icons\\doublebed.jpg");
+        ImageIcon img2 = new ImageIcon("Hotel-Management-System\\icons\\doublebed.jpg");
         Image scaledImage2 = img2.getImage().getScaledInstance(230, 230, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon2 = new ImageIcon(scaledImage2);
 
@@ -101,7 +101,7 @@ public class bedselectpage extends JFrame implements ActionListener{
         pt.setLayout(null);
         add(pt);
 
-        ImageIcon img3 = new ImageIcon("icons\\triplebed.jpg");
+        ImageIcon img3 = new ImageIcon("Hotel-Management-System\\icons\\triplebed.jpg");
         Image scaledImage3 = img3.getImage().getScaledInstance(230, 230, Image.SCALE_SMOOTH);
         ImageIcon scaledIcon3 = new ImageIcon(scaledImage3);
 

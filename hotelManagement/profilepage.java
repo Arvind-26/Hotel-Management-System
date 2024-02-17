@@ -39,7 +39,7 @@ public class profilepage extends JFrame implements ActionListener{
         setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        Image tr = Toolkit.getDefaultToolkit().getImage("icons\\tringle.png");
+        Image tr = Toolkit.getDefaultToolkit().getImage("Hotel-Management-System\\icons\\tringle.png");
         setIconImage(tr);
 
         sidepan = new JPanel();
@@ -51,10 +51,10 @@ public class profilepage extends JFrame implements ActionListener{
 
 
         
-        ImageIcon pro = new ImageIcon("icons\\Male.png");
+        ImageIcon pro = new ImageIcon("Hotel-Management-System\\icons\\Male.png");
         Image pro2 = pro.getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT);
 
-        ImageIcon pro1 = new ImageIcon("icons\\female.png");
+        ImageIcon pro1 = new ImageIcon("Hotel-Management-System\\icons\\female.png");
         Image pro21 = pro1.getImage().getScaledInstance(100,100, Image.SCALE_DEFAULT);
         
         if(w[3].equals("Male")){

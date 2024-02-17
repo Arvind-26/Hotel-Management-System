@@ -36,13 +36,13 @@ class signinpage extends JFrame {
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.WHITE);
 
-        Image tr = Toolkit.getDefaultToolkit().getImage("icons\\tringle.png");
+        Image tr = Toolkit.getDefaultToolkit().getImage("Hotel-Management-System\\icons\\tringle.png");
         setIconImage(tr);
 
         sidepan = new JPanel();
         sidepan.setBounds(0, 0, 180, 478);
         sidepan.setBackground(new Color(210, 4, 45));
-        ImageIcon bgg = new ImageIcon("icons\\logo2.png");
+        ImageIcon bgg = new ImageIcon("Hotel-Management-System\\icons\\Logo2.png");
         Image bgg2 = bgg.getImage().getScaledInstance(250,350, Image.SCALE_DEFAULT);
         JLabel bgg3 = new JLabel(new ImageIcon(bgg2));
         bgg3.setBounds(-70,40,300,300);

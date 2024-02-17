@@ -29,7 +29,7 @@ public class bookingpage extends JFrame implements ActionListener {
         setLayout(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        Image tr = Toolkit.getDefaultToolkit().getImage("icons\\tringle.png");
+        Image tr = Toolkit.getDefaultToolkit().getImage("Hotel-Management-System\\icons\\tringle.png");
         setIconImage(tr);
 
         sidepan = new JPanel();

@@ -23,7 +23,7 @@ class loginPage extends JFrame implements ActionListener  {
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     getContentPane().setBackground(Color.WHITE);
 
-    Image tr = Toolkit.getDefaultToolkit().getImage("icons\\tringle.png");
+    Image tr = Toolkit.getDefaultToolkit().getImage("Hotel-Management-System\\icons\\tringle.png");
     setIconImage(tr);
 
 
@@ -33,7 +33,7 @@ class loginPage extends JFrame implements ActionListener  {
     psign.setLayout(null);
     add(psign);
 
-    ImageIcon logo = new ImageIcon("icons\\Logo.png");
+    ImageIcon logo = new ImageIcon("Hotel-Management-System\\icons\\Logo.png");
     Image logo1 = logo.getImage().getScaledInstance(300, 200,Image.SCALE_DEFAULT);
     JLabel logolab = new JLabel(new ImageIcon(logo1));
     logolab.setBounds(0,50,400,200);
